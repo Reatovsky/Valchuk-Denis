@@ -1,0 +1,11 @@
+2026.03.18 17:29:34.847192 [ 1 ] {} <Warning> KeeperLogStore: No logs exists in /var/lib/clickhouse/coordination/log. It's Ok if it's the first run of clickhouse-keeper.
+2026.03.18 17:29:34.847698 [ 1 ] {} <Warning> KeeperLogStore: Removing all changelogs
+2026.03.18 17:29:34.850707 [ 1 ] {} <Warning> KeeperStateManager: No state was read
+2026.03.18 17:29:37.180333 [ 46 ] {} <Warning> RaftInstance: Election timeout, initiate leader election
+2026.03.18 17:29:37.236351 [ 1 ] {} <Warning> Application: Listen [::]:2181 failed: Poco::Exception. Code: 1000, e.code() = 0, DNS error: EAI: Address family for hostname not supported (version 23.8.16.16 (official build)). If it is an IPv6 or IPv4 address and your host has disabled IPv6 or IPv4, then consider to specify not disabled IPv4 or IPv6 address to listen in <listen_host> element of configuration file. Example for disabled IPv6: <listen_host>0.0.0.0</listen_host> . Example for disabled IPv4: <listen_host>::</listen_host>
+2026.03.18 17:34:57.451264 [ 57 ] {} <Error> RaftInstance: failed to accept a rpc connection due to error 125, Operation canceled
+2026.03.18 17:34:57.463192 [ 40 ] {} <Warning> KeeperLogStore: Raft server is not set in LogStore.
+2026.03.18 17:34:57.464904 [ 1 ] {} <Warning> KeeperLogStore: Changelog is shut down
+2026.03.18 17:35:33.273819 [ 1 ] {} <Warning> Application: Listen [::]:2181 failed: Poco::Exception. Code: 1000, e.code() = 0, DNS error: EAI: Address family for hostname not supported (version 23.8.16.16 (official build)). If it is an IPv6 or IPv4 address and your host has disabled IPv6 or IPv4, then consider to specify not disabled IPv4 or IPv6 address to listen in <listen_host> element of configuration file. Example for disabled IPv6: <listen_host>0.0.0.0</listen_host> . Example for disabled IPv4: <listen_host>::</listen_host>
+2026.03.18 19:30:58.262191 [ 61 ] {} <Error> RaftInstance: session 1 failed to read rpc header from socket ::ffff:172.18.0.4:32890 due to error 2, End of file, ref count 1
+2026.03.18 19:30:58.291621 [ 1 ] {} <Warning> KeeperLogStore: Changelog is shut down

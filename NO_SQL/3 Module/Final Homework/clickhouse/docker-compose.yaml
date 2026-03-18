@@ -1,0 +1,117 @@
+version: '3.8'
+
+services:
+  clickhouse-keeper1:
+    image: clickhouse/clickhouse-server:23.8
+    hostname: clickhouse-keeper1
+    container_name: clickhouse-keeper1
+    ports:
+      - "2181:2181"
+      - "9181:9181"
+    volumes:
+      - ./config/keeper1/keeper_config.xml:/etc/clickhouse-server/config.xml
+      - ./data/keeper1:/var/lib/clickhouse
+      - ./logs/keeper1:/var/log/clickhouse-server
+    command: >
+      bash -c "
+        clickhouse-keeper --config /etc/clickhouse-server/config.xml
+      "
+    networks:
+      - clickhouse-net
+
+  clickhouse-keeper2:
+    image: clickhouse/clickhouse-server:23.8
+    hostname: clickhouse-keeper2
+    container_name: clickhouse-keeper2
+    ports:
+      - "2182:2181"
+      - "9182:9181"
+    volumes:
+      - ./config/keeper2/keeper_config.xml:/etc/clickhouse-server/config.xml
+      - ./data/keeper2:/var/lib/clickhouse
+      - ./logs/keeper2:/var/log/clickhouse-server
+    command: >
+      bash -c "
+        clickhouse-keeper --config /etc/clickhouse-server/config.xml
+      "
+    networks:
+      - clickhouse-net
+
+  clickhouse-keeper3:
+    image: clickhouse/clickhouse-server:23.8
+    hostname: clickhouse-keeper3
+    container_name: clickhouse-keeper3
+    ports:
+      - "2183:2181"
+      - "9183:9181"
+    volumes:
+      - ./config/keeper3/keeper_config.xml:/etc/clickhouse-server/config.xml
+      - ./data/keeper3:/var/lib/clickhouse
+      - ./logs/keeper3:/var/log/clickhouse-server
+    command: >
+      bash -c "
+        clickhouse-keeper --config /etc/clickhouse-server/config.xml
+      "
+    networks:
+      - clickhouse-net
+
+  clickhouse-node1:
+    image: clickhouse/clickhouse-server:23.8
+    hostname: clickhouse-node1
+    container_name: clickhouse-node1
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - ./config/node1/config.xml:/etc/clickhouse-server/config.xml
+      - ./config/node1/users.xml:/etc/clickhouse-server/users.xml
+      - ./data/node1:/var/lib/clickhouse
+      - ./logs/node1:/var/log/clickhouse-server
+    depends_on:
+      - clickhouse-keeper1
+      - clickhouse-keeper2
+      - clickhouse-keeper3
+    networks:
+      - clickhouse-net
+
+  clickhouse-node2:
+    image: clickhouse/clickhouse-server:23.8
+    hostname: clickhouse-node2
+    container_name: clickhouse-node2
+    ports:
+      - "8124:8123"
+      - "9001:9000"
+    volumes:
+      - ./config/node2/config.xml:/etc/clickhouse-server/config.xml
+      - ./config/node2/users.xml:/etc/clickhouse-server/users.xml
+      - ./data/node2:/var/lib/clickhouse
+      - ./logs/node2:/var/log/clickhouse-server
+    depends_on:
+      - clickhouse-keeper1
+      - clickhouse-keeper2
+      - clickhouse-keeper3
+    networks:
+      - clickhouse-net
+
+  clickhouse-node3:
+    image: clickhouse/clickhouse-server:23.8
+    hostname: clickhouse-node3
+    container_name: clickhouse-node3
+    ports:
+      - "8125:8123"
+      - "9002:9000"
+    volumes:
+      - ./config/node3/config.xml:/etc/clickhouse-server/config.xml
+      - ./config/node3/users.xml:/etc/clickhouse-server/users.xml
+      - ./data/node3:/var/lib/clickhouse
+      - ./logs/node3:/var/log/clickhouse-server
+    depends_on:
+      - clickhouse-keeper1
+      - clickhouse-keeper2
+      - clickhouse-keeper3
+    networks:
+      - clickhouse-net
+
+networks:
+  clickhouse-net:
+    driver: bridge

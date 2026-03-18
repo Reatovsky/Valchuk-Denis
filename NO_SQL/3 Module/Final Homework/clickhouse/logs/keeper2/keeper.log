@@ -1,0 +1,324 @@
+2026.03.18 17:29:34.693313 [ 1 ] {} <Information> SentryWriter: Sending crash reports is disabled
+2026.03.18 17:29:34.693364 [ 1 ] {} <Trace> Pipe: Pipe capacity is 1.00 MiB
+2026.03.18 17:29:34.795411 [ 1 ] {} <Information> : Starting ClickHouse Keeper 23.8.16.16(revision : 54477, git hash: b80cac57eadd2bdad0ea44f54a262f5bd79e70b8, build id: 7D8F3AE700A95C8301ADF246CAD61375591B4B2E), PID 1
+2026.03.18 17:29:34.795475 [ 1 ] {} <Information> Application: starting up
+2026.03.18 17:29:34.795486 [ 1 ] {} <Information> Application: OS Name = Linux, OS Version = 6.17.0-14-generic, OS Architecture = x86_64
+2026.03.18 17:29:34.801546 [ 1 ] {} <Debug> Application: Initializing DateLUT.
+2026.03.18 17:29:34.801565 [ 1 ] {} <Trace> Application: Initialized DateLUT with time zone 'UTC'.
+2026.03.18 17:29:34.843386 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/class/thermal
+2026.03.18 17:29:34.843430 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:29:34.843587 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/devices/system/edac
+2026.03.18 17:29:34.843612 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/class/hwmon
+2026.03.18 17:29:34.843725 [ 1 ] {} <Information> Context: Cannot connect to ZooKeeper (or Keeper) before internal Keeper start, will wait for Keeper synchronously
+2026.03.18 17:29:34.843735 [ 1 ] {} <Debug> KeeperDispatcher: Initializing storage dispatcher
+2026.03.18 17:29:34.844289 [ 1 ] {} <Information> KeeperContext: Keeper feature flag FILTERED_LIST: enabled
+2026.03.18 17:29:34.844299 [ 1 ] {} <Information> KeeperContext: Keeper feature flag MULTI_READ: enabled
+2026.03.18 17:29:34.844301 [ 1 ] {} <Information> KeeperContext: Keeper feature flag CHECK_NOT_EXISTS: disabled
+2026.03.18 17:29:34.844623 [ 1 ] {} <Trace> KeeperSnapshotManager: Reading from disk LocalSnapshotDisk
+2026.03.18 17:29:34.847147 [ 1 ] {} <Trace> KeeperLogStore: Reading from disk LocalLogDisk
+2026.03.18 17:29:34.847192 [ 1 ] {} <Warning> KeeperLogStore: No logs exists in /var/lib/clickhouse/coordination/log. It's Ok if it's the first run of clickhouse-keeper.
+2026.03.18 17:29:34.847596 [ 1 ] {} <Information> KeeperLogStore: force_sync enabled
+2026.03.18 17:29:34.847606 [ 1 ] {} <Debug> KeeperDispatcher: Waiting server to initialize
+2026.03.18 17:29:34.847609 [ 1 ] {} <Debug> KeeperStateMachine: Totally have 0 snapshots
+2026.03.18 17:29:34.847613 [ 1 ] {} <Debug> KeeperStateMachine: No existing snapshots, last committed log index 0
+2026.03.18 17:29:34.847698 [ 1 ] {} <Warning> KeeperLogStore: Removing all changelogs
+2026.03.18 17:29:34.847948 [ 1 ] {} <Trace> Changelog: Starting new changelog changelog_1_100000.bin.zstd
+2026.03.18 17:29:34.848053 [ 1 ] {} <Information> KeeperServer: Preprocessing 0 log entries
+2026.03.18 17:29:34.848059 [ 1 ] {} <Information> KeeperServer: Preprocessing done
+2026.03.18 17:29:34.848064 [ 1 ] {} <Information> KeeperServer: No config in log store and snapshot, probably it's initial run. Will use config from .xml on disk
+2026.03.18 17:29:34.850674 [ 1 ] {} <Information> RaftInstance: Raft ASIO listener initiated on :::9444, unsecured
+2026.03.18 17:29:34.850707 [ 1 ] {} <Warning> KeeperStateManager: No state was read
+2026.03.18 17:29:34.850719 [ 1 ] {} <Information> RaftInstance: parameters: election timeout range 2000 - 4000, heartbeat 1000, leadership expiry 20000, max batch 100, backoff 50, snapshot distance 10000, enable randomized snapshot creation NO, log sync stop gap 99999, reserved logs 100000, client timeout 10000, auto forwarding on, API call type async, custom commit quorum size 0, custom election quorum size 0, snapshot receiver included, leadership transfer wait time 0, grace period of lagging state machine 0, snapshot IO: blocking, parallel log appending: on
+2026.03.18 17:29:34.850724 [ 1 ] {} <Information> RaftInstance: new election timeout range: 2000 - 4000
+2026.03.18 17:29:34.850755 [ 1 ] {} <Information> RaftInstance:    === INIT RAFT SERVER ===
+commit index 0
+term 0
+election timer allowed
+log store start 1, end 0
+config log idx 0, prev log idx 0
+2026.03.18 17:29:34.850804 [ 1 ] {} <Information> RaftInstance: peer 1: DC ID 0, clickhouse-keeper1:9444, voting member, 1
+peer 2: DC ID 0, clickhouse-keeper2:9444, voting member, 1
+peer 3: DC ID 0, clickhouse-keeper3:9444, voting member, 1
+my id: 2, voting_member
+num peers: 2
+2026.03.18 17:29:34.850817 [ 1 ] {} <Information> RaftInstance: global manager does not exist. will use local thread for commit and append
+2026.03.18 17:29:34.851099 [ 1 ] {} <Information> RaftInstance: wait for HB, for 50 + [2000, 4000] ms
+2026.03.18 17:29:34.851293 [ 63 ] {} <Information> RaftInstance: bg append_entries thread initiated
+2026.03.18 17:29:34.901456 [ 1 ] {} <Debug> KeeperDispatcher: Server initialized, waiting for quorum
+2026.03.18 17:29:37.180333 [ 46 ] {} <Warning> RaftInstance: Election timeout, initiate leader election
+2026.03.18 17:29:37.180417 [ 46 ] {} <Information> RaftInstance: [PRIORITY] decay, target 1 -> 1, mine 1
+2026.03.18 17:29:37.180435 [ 46 ] {} <Information> RaftInstance: [ELECTION TIMEOUT] current role: follower, log last term 0, state term 0, target p 1, my p 1, hb dead, pre-vote NOT done
+2026.03.18 17:29:37.180455 [ 46 ] {} <Information> RaftInstance: [PRE-VOTE INIT] my id 2, my role candidate, term 0, log idx 0, log term 0, priority (target 1 / mine 1)
+2026.03.18 17:29:37.182612 [ 51 ] {} <Information> RaftInstance: 0x7d0a9dc54698 connected to clickhouse-keeper3:9444 (as a client)
+2026.03.18 17:29:37.183124 [ 54 ] {} <Information> RaftInstance: 0x7d0a9dc54318 connected to clickhouse-keeper1:9444 (as a client)
+2026.03.18 17:29:37.183202 [ 53 ] {} <Information> RaftInstance: [PRE-VOTE RESP] peer 3 (O), term 0, resp term 0, my role candidate, dead 2, live 0, abandoned 0, num voting members 3, quorum 2
+2026.03.18 17:29:37.183358 [ 53 ] {} <Information> RaftInstance: [PRE-VOTE DONE] SUCCESS, term 0
+2026.03.18 17:29:37.183440 [ 53 ] {} <Information> RaftInstance: [PRE-VOTE DONE] initiate actual vote
+2026.03.18 17:29:37.186973 [ 53 ] {} <Information> RaftInstance: [VOTE INIT] my id 2, my role candidate, term 1, log idx 0, log term 0, priority (target 1 / mine 1)
+2026.03.18 17:29:37.187406 [ 58 ] {} <Information> RaftInstance: [PRE-VOTE RESP] peer 1 (O), term 0, resp term 0, my role candidate, dead 3, live 0, abandoned 0, num voting members 3, quorum 2
+2026.03.18 17:29:37.187532 [ 58 ] {} <Information> RaftInstance: [PRE-VOTE DONE] SUCCESS, term 0
+2026.03.18 17:29:37.187541 [ 58 ] {} <Information> RaftInstance: [PRE-VOTE DONE] actual vote is already initiated, do nothing
+2026.03.18 17:29:37.195205 [ 47 ] {} <Information> RaftInstance: [VOTE RESP] peer 3 (O), resp term 1, my role candidate, granted 2, responded 2, num voting members 3, quorum 2
+2026.03.18 17:29:37.195370 [ 47 ] {} <Information> RaftInstance: Server is elected as leader for term 1
+2026.03.18 17:29:37.195410 [ 47 ] {} <Information> RaftInstance: number of pending commit elements: 0
+2026.03.18 17:29:37.195425 [ 47 ] {} <Information> RaftInstance: state machine commit index 0, precommit index 0, last log index 0
+2026.03.18 17:29:37.195446 [ 47 ] {} <Information> RaftInstance: [BECOME LEADER] appended new config at 1
+2026.03.18 17:29:37.198881 [ 47 ] {} <Information> RaftInstance:   === LEADER (term 1) ===
+2026.03.18 17:29:37.198920 [ 49 ] {} <Information> RaftInstance: Election completed, will ignore the voting result from this server
+2026.03.18 17:29:37.235346 [ 62 ] {} <Information> RaftInstance: config at index 1 is committed, prev config log idx 0
+2026.03.18 17:29:37.235371 [ 62 ] {} <Information> RaftInstance: new config log idx 1, prev log idx 0, cur config log idx 0, prev log idx 0
+2026.03.18 17:29:37.235390 [ 62 ] {} <Information> RaftInstance: new configuration: log idx 1, prev log idx 0
+peer 1, DC ID 0, clickhouse-keeper1:9444, voting member, 1
+peer 2, DC ID 0, clickhouse-keeper2:9444, voting member, 1
+peer 3, DC ID 0, clickhouse-keeper3:9444, voting member, 1
+my id: 2, leader: 2, term: 1
+2026.03.18 17:29:37.235898 [ 1 ] {} <Debug> KeeperDispatcher: Quorum initialized
+2026.03.18 17:29:37.236002 [ 1 ] {} <Debug> KeeperDispatcher: Dispatcher initialized
+2026.03.18 17:29:37.236351 [ 1 ] {} <Warning> Application: Listen [::]:2181 failed: Poco::Exception. Code: 1000, e.code() = 0, DNS error: EAI: Address family for hostname not supported (version 23.8.16.16 (official build)). If it is an IPv6 or IPv4 address and your host has disabled IPv6 or IPv4, then consider to specify not disabled IPv4 or IPv6 address to listen in <listen_host> element of configuration file. Example for disabled IPv6: <listen_host>0.0.0.0</listen_host> . Example for disabled IPv4: <listen_host>::</listen_host>
+2026.03.18 17:29:37.236475 [ 1 ] {} <Information> Application: Listening for Keeper (tcp): 0.0.0.0:2181
+2026.03.18 17:29:37.236652 [ 1 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 38.41 KiB, peak 1.03 MiB, free memory in arenas 18.49 MiB, will set to 149.48 MiB (RSS), difference: 149.44 MiB
+2026.03.18 17:29:37.239558 [ 1 ] {} <Debug> ConfigReloader: Loading config '/etc/clickhouse-server/config.xml'
+2026.03.18 17:29:37.240440 [ 1 ] {} <Debug> ConfigReloader: Loaded config '/etc/clickhouse-server/config.xml', performing update on configuration
+2026.03.18 17:29:37.242120 [ 1 ] {} <Trace> KeeperDispatcher: Configuration update triggered, but nothing changed for Raft
+2026.03.18 17:29:37.242146 [ 1 ] {} <Information> CertificateReloader: One of paths is empty. Cannot apply new configuration for certificates. Fill all paths and try again.
+2026.03.18 17:29:37.242152 [ 1 ] {} <Debug> ConfigReloader: Loaded config '/etc/clickhouse-server/config.xml', performed update on configuration
+2026.03.18 17:29:37.243085 [ 1 ] {} <Information> Application: Ready for connections.
+2026.03.18 17:29:38.001198 [ 68 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 151.76 MiB, peak 156.76 MiB, free memory in arenas 18.44 MiB, will set to 150.25 MiB (RSS), difference: -1.51 MiB
+2026.03.18 17:34:35.000353 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:34:57.063003 [ 35 ] {} <Trace> BaseDaemon: Received signal 15
+2026.03.18 17:34:57.063041 [ 35 ] {} <Information> Application: Received termination signal (Terminated)
+2026.03.18 17:34:57.063061 [ 1 ] {} <Information> Application: Shutting down.
+2026.03.18 17:34:57.064229 [ 1 ] {} <Debug> Application: Waiting for current connections to Keeper to finish.
+2026.03.18 17:34:57.089252 [ 1 ] {} <Information> Application: Closed all listening sockets.
+2026.03.18 17:34:57.089264 [ 1 ] {} <Information> Application: Closed connections to Keeper.
+2026.03.18 17:34:57.089288 [ 1 ] {} <Debug> KeeperDispatcher: Shutting down storage dispatcher
+2026.03.18 17:34:57.444193 [ 1 ] {} <Information> RaftInstance: shutting down raft core
+2026.03.18 17:34:57.444323 [ 1 ] {} <Information> RaftInstance: sent stop signal to the commit thread.
+2026.03.18 17:34:57.445028 [ 1 ] {} <Information> RaftInstance: cancelled all schedulers.
+2026.03.18 17:34:57.445039 [ 1 ] {} <Information> RaftInstance: commit thread stopped.
+2026.03.18 17:34:57.445059 [ 1 ] {} <Information> RaftInstance: all pending commit elements dropped.
+2026.03.18 17:34:57.445065 [ 1 ] {} <Information> RaftInstance: reset all pointers.
+2026.03.18 17:34:57.446678 [ 1 ] {} <Information> RaftInstance: joined terminated commit thread.
+2026.03.18 17:34:57.446870 [ 1 ] {} <Information> RaftInstance: sent stop signal to background append thread.
+2026.03.18 17:34:57.446872 [ 63 ] {} <Information> RaftInstance: bg append_entries thread terminated
+2026.03.18 17:34:57.447056 [ 1 ] {} <Information> RaftInstance: clean up auto-forwarding queue: 0 elems
+2026.03.18 17:34:57.447065 [ 1 ] {} <Information> RaftInstance: clean up auto-forwarding clients
+2026.03.18 17:34:57.447070 [ 1 ] {} <Information> RaftInstance: raft_server shutdown completed.
+2026.03.18 17:34:57.447074 [ 1 ] {} <Information> RaftInstance: manually create a snapshot on 1
+2026.03.18 17:34:57.447078 [ 1 ] {} <Information> RaftInstance: creating a snapshot for index 1
+2026.03.18 17:34:57.447083 [ 1 ] {} <Information> RaftInstance: create snapshot idx 1 log_term 1
+2026.03.18 17:34:57.447090 [ 1 ] {} <Debug> KeeperStateMachine: Creating snapshot 1
+2026.03.18 17:34:57.447101 [ 1 ] {} <Information> KeeperStateMachine: Creating a snapshot during shutdown because 'create_snapshot_on_exit' is enabled.
+2026.03.18 17:34:57.450653 [ 1 ] {} <Debug> KeeperStateMachine: Created persistent snapshot 1 with path snapshot_1.bin.zstd
+2026.03.18 17:34:57.450663 [ 1 ] {} <Trace> KeeperStateMachine: Clearing garbage after snapshot
+2026.03.18 17:34:57.450667 [ 1 ] {} <Trace> KeeperStateMachine: Cleared garbage after snapshot
+2026.03.18 17:34:57.450674 [ 1 ] {} <Information> RaftInstance: snapshot idx 1 log_term 1 created, compact the log store if needed
+2026.03.18 17:34:57.450679 [ 1 ] {} <Information> KeeperStateMachine: Uploading snapshot snapshot_1.bin.zstd during shutdown because 'upload_snapshot_on_exit' is enabled.
+2026.03.18 17:34:57.450684 [ 1 ] {} <Information> RaftInstance: create snapshot idx 1 log_term 1 done: 3596 us elapsed
+2026.03.18 17:34:57.451264 [ 57 ] {} <Error> RaftInstance: failed to accept a rpc connection due to error 125, Operation canceled
+2026.03.18 17:34:57.451303 [ 56 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 15
+2026.03.18 17:34:57.451310 [ 54 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 14
+2026.03.18 17:34:57.451316 [ 52 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 13
+2026.03.18 17:34:57.451331 [ 47 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 12
+2026.03.18 17:34:57.451347 [ 48 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 11
+2026.03.18 17:34:57.451408 [ 46 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 10
+2026.03.18 17:34:57.451529 [ 58 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 9
+2026.03.18 17:34:57.451535 [ 49 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 8
+2026.03.18 17:34:57.451542 [ 53 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 7
+2026.03.18 17:34:57.451569 [ 61 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 6
+2026.03.18 17:34:57.451719 [ 51 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 5
+2026.03.18 17:34:57.451734 [ 55 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 3
+2026.03.18 17:34:57.451928 [ 50 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 2
+2026.03.18 17:34:57.451942 [ 59 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 1
+2026.03.18 17:34:57.451720 [ 60 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 4
+2026.03.18 17:34:57.461527 [ 57 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 0
+2026.03.18 17:34:57.463192 [ 40 ] {} <Warning> KeeperLogStore: Raft server is not set in LogStore.
+2026.03.18 17:34:57.464110 [ 1 ] {} <Debug> KeeperSnapshotManagerS3: Shutting down KeeperSnapshotManagerS3
+2026.03.18 17:34:57.464287 [ 1 ] {} <Information> KeeperSnapshotManagerS3: KeeperSnapshotManagerS3 shut down
+2026.03.18 17:34:57.464295 [ 1 ] {} <Debug> KeeperDispatcher: Dispatcher shut down
+2026.03.18 17:34:57.464301 [ 1 ] {} <Debug> Application: Destroyed global context.
+2026.03.18 17:34:57.464366 [ 1 ] {} <Trace> Context: Shutting down named sessions
+2026.03.18 17:34:57.464375 [ 1 ] {} <Trace> Context: Shutting down database catalog
+2026.03.18 17:34:57.464379 [ 1 ] {} <Trace> DatabaseCatalog: Shutting down system databases
+2026.03.18 17:34:57.464409 [ 1 ] {} <Trace> Context: Shutting down DDLWorker
+2026.03.18 17:34:57.464413 [ 1 ] {} <Trace> Context: Shutting down caches
+2026.03.18 17:34:57.464421 [ 1 ] {} <Trace> Context: Shutting down AccessControl
+2026.03.18 17:34:57.464904 [ 1 ] {} <Warning> KeeperLogStore: Changelog is shut down
+2026.03.18 17:34:57.466013 [ 1 ] {} <Information> Application: shutting down
+2026.03.18 17:34:57.466024 [ 1 ] {} <Debug> Application: Uninitializing subsystem: Logging Subsystem
+2026.03.18 17:34:57.466124 [ 35 ] {} <Trace> BaseDaemon: Received signal -2
+2026.03.18 17:34:57.466141 [ 35 ] {} <Information> BaseDaemon: Stop SignalListener thread
+2026.03.18 17:35:30.555695 [ 1 ] {} <Information> SentryWriter: Sending crash reports is disabled
+2026.03.18 17:35:30.555749 [ 1 ] {} <Trace> Pipe: Pipe capacity is 1.00 MiB
+2026.03.18 17:35:30.650424 [ 1 ] {} <Information> : Starting ClickHouse Keeper 23.8.16.16(revision : 54477, git hash: b80cac57eadd2bdad0ea44f54a262f5bd79e70b8, build id: 7D8F3AE700A95C8301ADF246CAD61375591B4B2E), PID 1
+2026.03.18 17:35:30.650484 [ 1 ] {} <Information> Application: starting up
+2026.03.18 17:35:30.650496 [ 1 ] {} <Information> Application: OS Name = Linux, OS Version = 6.17.0-14-generic, OS Architecture = x86_64
+2026.03.18 17:35:30.651407 [ 1 ] {} <Debug> Application: Initializing DateLUT.
+2026.03.18 17:35:30.651415 [ 1 ] {} <Trace> Application: Initialized DateLUT with time zone 'UTC'.
+2026.03.18 17:35:30.653811 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/class/thermal
+2026.03.18 17:35:30.653836 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:35:30.653957 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/devices/system/edac
+2026.03.18 17:35:30.653980 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/class/hwmon
+2026.03.18 17:35:30.654431 [ 1 ] {} <Information> Context: Cannot connect to ZooKeeper (or Keeper) before internal Keeper start, will wait for Keeper synchronously
+2026.03.18 17:35:30.654444 [ 1 ] {} <Debug> KeeperDispatcher: Initializing storage dispatcher
+2026.03.18 17:35:30.669317 [ 1 ] {} <Information> KeeperContext: Keeper feature flag FILTERED_LIST: enabled
+2026.03.18 17:35:30.669340 [ 1 ] {} <Information> KeeperContext: Keeper feature flag MULTI_READ: enabled
+2026.03.18 17:35:30.669344 [ 1 ] {} <Information> KeeperContext: Keeper feature flag CHECK_NOT_EXISTS: disabled
+2026.03.18 17:35:30.669425 [ 1 ] {} <Trace> KeeperSnapshotManager: Reading from disk LocalSnapshotDisk
+2026.03.18 17:35:30.669869 [ 1 ] {} <Trace> KeeperSnapshotManager: Found snapshot_1.bin.zstd on LocalSnapshotDisk
+2026.03.18 17:35:30.685391 [ 1 ] {} <Trace> KeeperLogStore: Reading from disk LocalLogDisk
+2026.03.18 17:35:30.685504 [ 1 ] {} <Trace> KeeperLogStore: Found changelog_1_100000.bin.zstd on LocalLogDisk
+2026.03.18 17:35:30.685877 [ 1 ] {} <Information> KeeperLogStore: force_sync enabled
+2026.03.18 17:35:30.685894 [ 1 ] {} <Debug> KeeperDispatcher: Waiting server to initialize
+2026.03.18 17:35:30.685900 [ 1 ] {} <Debug> KeeperStateMachine: Totally have 1 snapshots
+2026.03.18 17:35:30.685905 [ 1 ] {} <Debug> KeeperStateMachine: Trying to load state machine from snapshot up to log index 1
+2026.03.18 17:35:30.686151 [ 1 ] {} <Debug> KeeperStateMachine: Loaded snapshot with last committed log index 1
+2026.03.18 17:35:30.686284 [ 1 ] {} <Trace> KeeperLogStore: Totally read from changelog changelog_1_100000.bin.zstd 1 entries
+2026.03.18 17:35:30.686298 [ 1 ] {} <Trace> KeeperLogStore: Continue to write into changelog_1_100000.bin.zstd
+2026.03.18 17:35:30.686359 [ 1 ] {} <Information> KeeperServer: Preprocessing 0 log entries
+2026.03.18 17:35:30.686366 [ 1 ] {} <Information> KeeperServer: Preprocessing done
+2026.03.18 17:35:30.686380 [ 1 ] {} <Information> KeeperServer: Will use config from log store with log index 1
+2026.03.18 17:35:30.723014 [ 1 ] {} <Information> RaftInstance: Raft ASIO listener initiated on :::9444, unsecured
+2026.03.18 17:35:30.723095 [ 1 ] {} <Information> KeeperStateManager: Read state from /var/lib/clickhouse/coordination/state
+2026.03.18 17:35:30.723115 [ 1 ] {} <Information> RaftInstance: parameters: election timeout range 2000 - 4000, heartbeat 1000, leadership expiry 20000, max batch 100, backoff 50, snapshot distance 10000, enable randomized snapshot creation NO, log sync stop gap 99999, reserved logs 100000, client timeout 10000, auto forwarding on, API call type async, custom commit quorum size 0, custom election quorum size 0, snapshot receiver included, leadership transfer wait time 0, grace period of lagging state machine 0, snapshot IO: blocking, parallel log appending: on
+2026.03.18 17:35:30.723124 [ 1 ] {} <Information> RaftInstance: new election timeout range: 2000 - 4000
+2026.03.18 17:35:30.723143 [ 1 ] {} <Information> RaftInstance:    === INIT RAFT SERVER ===
+commit index 1
+term 1
+election timer allowed
+log store start 1, end 1
+config log idx 1, prev log idx 0
+2026.03.18 17:35:30.723227 [ 1 ] {} <Information> RaftInstance: peer 1: DC ID 0, clickhouse-keeper1:9444, voting member, 1
+peer 2: DC ID 0, clickhouse-keeper2:9444, voting member, 1
+peer 3: DC ID 0, clickhouse-keeper3:9444, voting member, 1
+my id: 2, voting_member
+num peers: 2
+2026.03.18 17:35:30.723234 [ 1 ] {} <Information> RaftInstance: global manager does not exist. will use local thread for commit and append
+2026.03.18 17:35:30.723363 [ 1 ] {} <Information> RaftInstance: wait for HB, for 50 + [2000, 4000] ms
+2026.03.18 17:35:30.725005 [ 64 ] {} <Information> RaftInstance: bg append_entries thread initiated
+2026.03.18 17:35:30.774052 [ 1 ] {} <Debug> KeeperDispatcher: Server initialized, waiting for quorum
+2026.03.18 17:35:33.251325 [ 48 ] {} <Information> RaftInstance: receive a incoming rpc connection
+2026.03.18 17:35:33.251361 [ 48 ] {} <Information> RaftInstance: session 1 got connection from ::ffff:172.18.0.4:32890 (as a server)
+2026.03.18 17:35:33.251949 [ 50 ] {} <Information> RaftInstance: [PRE-VOTE REQ] my role follower, from peer 3, log term: req 1 / mine 1
+last idx: req 1 / mine 1, term: req 1 / mine 1
+HB dead
+2026.03.18 17:35:33.252157 [ 50 ] {} <Information> RaftInstance: pre-vote decision: O (grant)
+2026.03.18 17:35:33.257513 [ 51 ] {} <Debug> IDisk: Copying from LocalStateFileDisk (path: /var/lib/clickhouse/coordination) state to LocalStateFileDisk (path: /var/lib/clickhouse/coordination) state-OLD.
+2026.03.18 17:35:33.261125 [ 51 ] {} <Information> RaftInstance: [BECOME FOLLOWER] term 2
+2026.03.18 17:35:33.261181 [ 51 ] {} <Information> RaftInstance: [PRIORITY] decay, target 1 -> 1, mine 1
+2026.03.18 17:35:33.261187 [ 51 ] {} <Information> RaftInstance: [VOTE REQ] my role follower, from peer 3, log term: req 1 / mine 1
+last idx: req 1 / mine 1, term: req 2 / mine 2
+priority: target 1 / mine 1, voted_for -1
+2026.03.18 17:35:33.261191 [ 51 ] {} <Information> RaftInstance: decision: O (grant), voted_for 3, term 2
+2026.03.18 17:35:33.261227 [ 51 ] {} <Debug> IDisk: Copying from LocalStateFileDisk (path: /var/lib/clickhouse/coordination) state to LocalStateFileDisk (path: /var/lib/clickhouse/coordination) state-OLD.
+2026.03.18 17:35:33.272822 [ 57 ] {} <Information> RaftInstance: receive a config change from leader at 2
+2026.03.18 17:35:33.272950 [ 1 ] {} <Debug> KeeperDispatcher: Quorum initialized
+2026.03.18 17:35:33.273328 [ 1 ] {} <Debug> KeeperDispatcher: Dispatcher initialized
+2026.03.18 17:35:33.273819 [ 1 ] {} <Warning> Application: Listen [::]:2181 failed: Poco::Exception. Code: 1000, e.code() = 0, DNS error: EAI: Address family for hostname not supported (version 23.8.16.16 (official build)). If it is an IPv6 or IPv4 address and your host has disabled IPv6 or IPv4, then consider to specify not disabled IPv4 or IPv6 address to listen in <listen_host> element of configuration file. Example for disabled IPv6: <listen_host>0.0.0.0</listen_host> . Example for disabled IPv4: <listen_host>::</listen_host>
+2026.03.18 17:35:33.273988 [ 1 ] {} <Information> Application: Listening for Keeper (tcp): 0.0.0.0:2181
+2026.03.18 17:35:33.274957 [ 1 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 82.91 KiB, peak 2.07 MiB, free memory in arenas 27.23 MiB, will set to 151.07 MiB (RSS), difference: 150.99 MiB
+2026.03.18 17:35:33.275426 [ 63 ] {} <Information> RaftInstance: config at index 2 is committed, prev config log idx 1
+2026.03.18 17:35:33.275456 [ 63 ] {} <Information> RaftInstance: new config log idx 2, prev log idx 1, cur config log idx 1, prev log idx 0
+2026.03.18 17:35:33.275542 [ 63 ] {} <Information> RaftInstance: new configuration: log idx 2, prev log idx 1
+peer 1, DC ID 0, clickhouse-keeper1:9444, voting member, 1
+peer 2, DC ID 0, clickhouse-keeper2:9444, voting member, 1
+peer 3, DC ID 0, clickhouse-keeper3:9444, voting member, 1
+my id: 2, leader: 3, term: 2
+2026.03.18 17:35:33.291344 [ 1 ] {} <Debug> ConfigReloader: Loading config '/etc/clickhouse-server/config.xml'
+2026.03.18 17:35:33.296112 [ 1 ] {} <Debug> ConfigReloader: Loaded config '/etc/clickhouse-server/config.xml', performing update on configuration
+2026.03.18 17:35:33.297666 [ 1 ] {} <Trace> KeeperDispatcher: Configuration update triggered, but nothing changed for Raft
+2026.03.18 17:35:33.297698 [ 1 ] {} <Information> CertificateReloader: One of paths is empty. Cannot apply new configuration for certificates. Fill all paths and try again.
+2026.03.18 17:35:33.297703 [ 1 ] {} <Debug> ConfigReloader: Loaded config '/etc/clickhouse-server/config.xml', performed update on configuration
+2026.03.18 17:35:33.299118 [ 1 ] {} <Information> Application: Ready for connections.
+2026.03.18 17:35:34.003649 [ 68 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 153.40 MiB, peak 158.40 MiB, free memory in arenas 32.14 MiB, will set to 156.93 MiB (RSS), difference: 3.53 MiB
+2026.03.18 17:35:36.558281 [ 63 ] {} <Debug> KeeperStateMachine: Session ID response 1 with timeout 30000
+2026.03.18 17:35:36.569239 [ 63 ] {} <Debug> KeeperStateMachine: Session ID response 2 with timeout 30000
+2026.03.18 17:35:36.754934 [ 63 ] {} <Debug> KeeperStateMachine: Session ID response 3 with timeout 30000
+2026.03.18 17:36:52.055239 [ 68 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 158.09 MiB, peak 158.40 MiB, free memory in arenas 24.78 MiB, will set to 153.08 MiB (RSS), difference: -5.00 MiB
+2026.03.18 17:37:50.000488 [ 68 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 153.17 MiB, peak 158.40 MiB, free memory in arenas 2.36 MiB, will set to 134.41 MiB (RSS), difference: -18.76 MiB
+2026.03.18 17:37:52.000806 [ 68 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 134.42 MiB, peak 158.40 MiB, free memory in arenas 2.37 MiB, will set to 129.73 MiB (RSS), difference: -4.69 MiB
+2026.03.18 17:40:31.001326 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:45:31.189693 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:50:32.023661 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:55:33.001103 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:00:33.126940 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:05:34.003783 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:10:35.037090 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:15:36.105340 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:20:37.000540 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:25:37.068118 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:30:37.111627 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:35:38.013403 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:40:39.005852 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:45:40.005591 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:50:41.000813 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:55:42.249388 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:00:43.000607 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:05:44.000394 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:10:45.001085 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:15:46.002524 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:20:47.000491 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:25:47.029271 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:30:48.003019 [ 68 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:30:57.184918 [ 36 ] {} <Trace> BaseDaemon: Received signal 15
+2026.03.18 19:30:57.185167 [ 36 ] {} <Information> Application: Received termination signal (Terminated)
+2026.03.18 19:30:57.185190 [ 1 ] {} <Information> Application: Shutting down.
+2026.03.18 19:30:57.185283 [ 1 ] {} <Debug> Application: Waiting for current connections to Keeper to finish.
+2026.03.18 19:30:57.275308 [ 1 ] {} <Information> Application: Closed all listening sockets.
+2026.03.18 19:30:57.275456 [ 1 ] {} <Information> Application: Closed connections to Keeper.
+2026.03.18 19:30:57.275465 [ 1 ] {} <Debug> KeeperDispatcher: Shutting down storage dispatcher
+2026.03.18 19:30:58.260738 [ 1 ] {} <Information> RaftInstance: shutting down raft core
+2026.03.18 19:30:58.260829 [ 1 ] {} <Information> RaftInstance: sent stop signal to the commit thread.
+2026.03.18 19:30:58.260942 [ 1 ] {} <Information> RaftInstance: cancelled all schedulers.
+2026.03.18 19:30:58.261845 [ 1 ] {} <Information> RaftInstance: commit thread stopped.
+2026.03.18 19:30:58.261875 [ 1 ] {} <Information> RaftInstance: all pending commit elements dropped.
+2026.03.18 19:30:58.261880 [ 1 ] {} <Information> RaftInstance: reset all pointers.
+2026.03.18 19:30:58.261929 [ 1 ] {} <Information> RaftInstance: joined terminated commit thread.
+2026.03.18 19:30:58.262048 [ 1 ] {} <Information> RaftInstance: sent stop signal to background append thread.
+2026.03.18 19:30:58.262070 [ 64 ] {} <Information> RaftInstance: bg append_entries thread terminated
+2026.03.18 19:30:58.262191 [ 61 ] {} <Error> RaftInstance: session 1 failed to read rpc header from socket ::ffff:172.18.0.4:32890 due to error 2, End of file, ref count 1
+2026.03.18 19:30:58.262226 [ 1 ] {} <Information> RaftInstance: clean up auto-forwarding queue: 0 elems
+2026.03.18 19:30:58.262233 [ 1 ] {} <Information> RaftInstance: clean up auto-forwarding clients
+2026.03.18 19:30:58.262236 [ 1 ] {} <Information> RaftInstance: raft_server shutdown completed.
+2026.03.18 19:30:58.262239 [ 1 ] {} <Information> RaftInstance: manually create a snapshot on 2236
+2026.03.18 19:30:58.262243 [ 1 ] {} <Information> RaftInstance: creating a snapshot for index 2236
+2026.03.18 19:30:58.262248 [ 1 ] {} <Information> RaftInstance: create snapshot idx 2236 log_term 2
+2026.03.18 19:30:58.262253 [ 1 ] {} <Debug> KeeperStateMachine: Creating snapshot 2236
+2026.03.18 19:30:58.262263 [ 1 ] {} <Information> KeeperStateMachine: Creating a snapshot during shutdown because 'create_snapshot_on_exit' is enabled.
+2026.03.18 19:30:58.267884 [ 1 ] {} <Debug> KeeperStateMachine: Created persistent snapshot 2236 with path snapshot_2236.bin.zstd
+2026.03.18 19:30:58.267899 [ 1 ] {} <Trace> KeeperStateMachine: Clearing garbage after snapshot
+2026.03.18 19:30:58.267903 [ 1 ] {} <Trace> KeeperStateMachine: Cleared garbage after snapshot
+2026.03.18 19:30:58.267913 [ 1 ] {} <Information> RaftInstance: snapshot idx 2236 log_term 2 created, compact the log store if needed
+2026.03.18 19:30:58.267918 [ 1 ] {} <Information> KeeperStateMachine: Uploading snapshot snapshot_2236.bin.zstd during shutdown because 'upload_snapshot_on_exit' is enabled.
+2026.03.18 19:30:58.267924 [ 1 ] {} <Information> RaftInstance: create snapshot idx 2236 log_term 2 done: 5673 us elapsed
+2026.03.18 19:30:58.269465 [ 50 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 15
+2026.03.18 19:30:58.269486 [ 52 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 14
+2026.03.18 19:30:58.269498 [ 59 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 13
+2026.03.18 19:30:58.269510 [ 55 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 12
+2026.03.18 19:30:58.269522 [ 47 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 11
+2026.03.18 19:30:58.269534 [ 54 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 10
+2026.03.18 19:30:58.269544 [ 58 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 9
+2026.03.18 19:30:58.269565 [ 49 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 8
+2026.03.18 19:30:58.269573 [ 56 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 7
+2026.03.18 19:30:58.269579 [ 51 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 6
+2026.03.18 19:30:58.269584 [ 53 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 5
+2026.03.18 19:30:58.269590 [ 48 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 4
+2026.03.18 19:30:58.269597 [ 61 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 3
+2026.03.18 19:30:58.269600 [ 62 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 2
+2026.03.18 19:30:58.269606 [ 60 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 1
+2026.03.18 19:30:58.269609 [ 57 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 0
+2026.03.18 19:30:58.280308 [ 1 ] {} <Debug> KeeperSnapshotManagerS3: Shutting down KeeperSnapshotManagerS3
+2026.03.18 19:30:58.280385 [ 1 ] {} <Information> KeeperSnapshotManagerS3: KeeperSnapshotManagerS3 shut down
+2026.03.18 19:30:58.280391 [ 1 ] {} <Debug> KeeperDispatcher: Dispatcher shut down
+2026.03.18 19:30:58.280396 [ 1 ] {} <Debug> Application: Destroyed global context.
+2026.03.18 19:30:58.280458 [ 1 ] {} <Trace> Context: Shutting down named sessions
+2026.03.18 19:30:58.280465 [ 1 ] {} <Trace> Context: Shutting down database catalog
+2026.03.18 19:30:58.280470 [ 1 ] {} <Trace> DatabaseCatalog: Shutting down system databases
+2026.03.18 19:30:58.280478 [ 1 ] {} <Trace> Context: Shutting down DDLWorker
+2026.03.18 19:30:58.280481 [ 1 ] {} <Trace> Context: Shutting down caches
+2026.03.18 19:30:58.280487 [ 1 ] {} <Trace> Context: Shutting down AccessControl
+2026.03.18 19:30:58.291621 [ 1 ] {} <Warning> KeeperLogStore: Changelog is shut down
+2026.03.18 19:30:58.294449 [ 1 ] {} <Information> Application: shutting down
+2026.03.18 19:30:58.294468 [ 1 ] {} <Debug> Application: Uninitializing subsystem: Logging Subsystem
+2026.03.18 19:30:58.294499 [ 36 ] {} <Trace> BaseDaemon: Received signal -2
+2026.03.18 19:30:58.294505 [ 36 ] {} <Information> BaseDaemon: Stop SignalListener thread

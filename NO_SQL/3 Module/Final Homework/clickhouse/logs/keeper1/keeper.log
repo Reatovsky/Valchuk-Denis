@@ -1,0 +1,1793 @@
+2026.03.18 17:29:34.783560 [ 1 ] {} <Information> SentryWriter: Sending crash reports is disabled
+2026.03.18 17:29:34.783614 [ 1 ] {} <Trace> Pipe: Pipe capacity is 1.00 MiB
+2026.03.18 17:29:34.858404 [ 1 ] {} <Information> : Starting ClickHouse Keeper 23.8.16.16(revision : 54477, git hash: b80cac57eadd2bdad0ea44f54a262f5bd79e70b8, build id: 7D8F3AE700A95C8301ADF246CAD61375591B4B2E), PID 1
+2026.03.18 17:29:34.858441 [ 1 ] {} <Information> Application: starting up
+2026.03.18 17:29:34.858451 [ 1 ] {} <Information> Application: OS Name = Linux, OS Version = 6.17.0-14-generic, OS Architecture = x86_64
+2026.03.18 17:29:34.863479 [ 1 ] {} <Debug> Application: Initializing DateLUT.
+2026.03.18 17:29:34.863498 [ 1 ] {} <Trace> Application: Initialized DateLUT with time zone 'UTC'.
+2026.03.18 17:29:34.864661 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/class/thermal
+2026.03.18 17:29:34.864686 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:29:34.864816 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/devices/system/edac
+2026.03.18 17:29:34.864840 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/class/hwmon
+2026.03.18 17:29:34.864928 [ 1 ] {} <Information> Context: Cannot connect to ZooKeeper (or Keeper) before internal Keeper start, will wait for Keeper synchronously
+2026.03.18 17:29:34.864937 [ 1 ] {} <Debug> KeeperDispatcher: Initializing storage dispatcher
+2026.03.18 17:29:34.865451 [ 1 ] {} <Information> KeeperContext: Keeper feature flag FILTERED_LIST: enabled
+2026.03.18 17:29:34.866426 [ 1 ] {} <Information> KeeperContext: Keeper feature flag MULTI_READ: enabled
+2026.03.18 17:29:34.866431 [ 1 ] {} <Information> KeeperContext: Keeper feature flag CHECK_NOT_EXISTS: disabled
+2026.03.18 17:29:34.867072 [ 1 ] {} <Trace> KeeperSnapshotManager: Reading from disk LocalSnapshotDisk
+2026.03.18 17:29:34.870362 [ 1 ] {} <Trace> KeeperLogStore: Reading from disk LocalLogDisk
+2026.03.18 17:29:34.870422 [ 1 ] {} <Warning> KeeperLogStore: No logs exists in /var/lib/clickhouse/coordination/log. It's Ok if it's the first run of clickhouse-keeper.
+2026.03.18 17:29:34.871014 [ 1 ] {} <Information> KeeperLogStore: force_sync enabled
+2026.03.18 17:29:34.871025 [ 1 ] {} <Debug> KeeperDispatcher: Waiting server to initialize
+2026.03.18 17:29:34.871029 [ 1 ] {} <Debug> KeeperStateMachine: Totally have 0 snapshots
+2026.03.18 17:29:34.871032 [ 1 ] {} <Debug> KeeperStateMachine: No existing snapshots, last committed log index 0
+2026.03.18 17:29:34.871060 [ 1 ] {} <Warning> KeeperLogStore: Removing all changelogs
+2026.03.18 17:29:34.871070 [ 1 ] {} <Trace> Changelog: Starting new changelog changelog_1_100000.bin.zstd
+2026.03.18 17:29:34.871164 [ 1 ] {} <Information> KeeperServer: Preprocessing 0 log entries
+2026.03.18 17:29:34.871170 [ 1 ] {} <Information> KeeperServer: Preprocessing done
+2026.03.18 17:29:34.871173 [ 1 ] {} <Information> KeeperServer: No config in log store and snapshot, probably it's initial run. Will use config from .xml on disk
+2026.03.18 17:29:34.884682 [ 1 ] {} <Information> RaftInstance: Raft ASIO listener initiated on :::9444, unsecured
+2026.03.18 17:29:34.884745 [ 1 ] {} <Warning> KeeperStateManager: No state was read
+2026.03.18 17:29:34.884761 [ 1 ] {} <Information> RaftInstance: parameters: election timeout range 2000 - 4000, heartbeat 1000, leadership expiry 20000, max batch 100, backoff 50, snapshot distance 10000, enable randomized snapshot creation NO, log sync stop gap 99999, reserved logs 100000, client timeout 10000, auto forwarding on, API call type async, custom commit quorum size 0, custom election quorum size 0, snapshot receiver included, leadership transfer wait time 0, grace period of lagging state machine 0, snapshot IO: blocking, parallel log appending: on
+2026.03.18 17:29:34.884770 [ 1 ] {} <Information> RaftInstance: new election timeout range: 2000 - 4000
+2026.03.18 17:29:34.884784 [ 1 ] {} <Information> RaftInstance:    === INIT RAFT SERVER ===
+commit index 0
+term 0
+election timer allowed
+log store start 1, end 0
+config log idx 0, prev log idx 0
+2026.03.18 17:29:34.884852 [ 1 ] {} <Information> RaftInstance: peer 1: DC ID 0, clickhouse-keeper1:9444, voting member, 1
+peer 2: DC ID 0, clickhouse-keeper2:9444, voting member, 1
+peer 3: DC ID 0, clickhouse-keeper3:9444, voting member, 1
+my id: 1, voting_member
+num peers: 2
+2026.03.18 17:29:34.884870 [ 1 ] {} <Information> RaftInstance: global manager does not exist. will use local thread for commit and append
+2026.03.18 17:29:34.885201 [ 63 ] {} <Information> RaftInstance: bg append_entries thread initiated
+2026.03.18 17:29:34.885231 [ 1 ] {} <Information> RaftInstance: wait for HB, for 50 + [2000, 4000] ms
+2026.03.18 17:29:34.935614 [ 1 ] {} <Debug> KeeperDispatcher: Server initialized, waiting for quorum
+2026.03.18 17:29:37.182958 [ 46 ] {} <Information> RaftInstance: receive a incoming rpc connection
+2026.03.18 17:29:37.182993 [ 46 ] {} <Information> RaftInstance: session 1 got connection from ::ffff:172.18.0.2:58038 (as a server)
+2026.03.18 17:29:37.183413 [ 48 ] {} <Information> RaftInstance: [PRE-VOTE REQ] my role follower, from peer 2, log term: req 0 / mine 0
+last idx: req 0 / mine 0, term: req 0 / mine 0
+HB dead
+2026.03.18 17:29:37.183426 [ 48 ] {} <Information> RaftInstance: pre-vote decision: O (grant)
+2026.03.18 17:29:37.190629 [ 49 ] {} <Information> RaftInstance: [BECOME FOLLOWER] term 1
+2026.03.18 17:29:37.190697 [ 49 ] {} <Information> RaftInstance: [PRIORITY] decay, target 1 -> 1, mine 1
+2026.03.18 17:29:37.190708 [ 49 ] {} <Information> RaftInstance: [VOTE REQ] my role follower, from peer 2, log term: req 0 / mine 0
+last idx: req 0 / mine 0, term: req 1 / mine 1
+priority: target 1 / mine 1, voted_for -1
+2026.03.18 17:29:37.190721 [ 49 ] {} <Information> RaftInstance: decision: O (grant), voted_for 2, term 1
+2026.03.18 17:29:37.190918 [ 49 ] {} <Debug> IDisk: Copying from LocalStateFileDisk (path: /var/lib/clickhouse/coordination) state to LocalStateFileDisk (path: /var/lib/clickhouse/coordination) state-OLD.
+2026.03.18 17:29:37.238021 [ 57 ] {} <Information> RaftInstance: receive a config change from leader at 1
+2026.03.18 17:29:37.238078 [ 1 ] {} <Debug> KeeperDispatcher: Quorum initialized
+2026.03.18 17:29:37.238398 [ 1 ] {} <Debug> KeeperDispatcher: Dispatcher initialized
+2026.03.18 17:29:37.238964 [ 1 ] {} <Warning> Application: Listen [::]:2181 failed: Poco::Exception. Code: 1000, e.code() = 0, DNS error: EAI: Address family for hostname not supported (version 23.8.16.16 (official build)). If it is an IPv6 or IPv4 address and your host has disabled IPv6 or IPv4, then consider to specify not disabled IPv4 or IPv6 address to listen in <listen_host> element of configuration file. Example for disabled IPv6: <listen_host>0.0.0.0</listen_host> . Example for disabled IPv4: <listen_host>::</listen_host>
+2026.03.18 17:29:37.239256 [ 1 ] {} <Information> Application: Listening for Keeper (tcp): 0.0.0.0:2181
+2026.03.18 17:29:37.240426 [ 1 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 147.30 KiB, peak 2.13 MiB, free memory in arenas 12.18 MiB, will set to 138.00 MiB (RSS), difference: 137.86 MiB
+2026.03.18 17:29:37.240841 [ 62 ] {} <Information> RaftInstance: config at index 1 is committed, prev config log idx 0
+2026.03.18 17:29:37.241040 [ 62 ] {} <Information> RaftInstance: new config log idx 1, prev log idx 0, cur config log idx 0, prev log idx 0
+2026.03.18 17:29:37.241064 [ 62 ] {} <Information> RaftInstance: new configuration: log idx 1, prev log idx 0
+peer 1, DC ID 0, clickhouse-keeper1:9444, voting member, 1
+peer 2, DC ID 0, clickhouse-keeper2:9444, voting member, 1
+peer 3, DC ID 0, clickhouse-keeper3:9444, voting member, 1
+my id: 1, leader: 2, term: 1
+2026.03.18 17:29:37.245826 [ 1 ] {} <Debug> ConfigReloader: Loading config '/etc/clickhouse-server/config.xml'
+2026.03.18 17:29:37.246498 [ 1 ] {} <Debug> ConfigReloader: Loaded config '/etc/clickhouse-server/config.xml', performing update on configuration
+2026.03.18 17:29:37.247641 [ 1 ] {} <Trace> KeeperDispatcher: Configuration update triggered, but nothing changed for Raft
+2026.03.18 17:29:37.247659 [ 1 ] {} <Information> CertificateReloader: One of paths is empty. Cannot apply new configuration for certificates. Fill all paths and try again.
+2026.03.18 17:29:37.247667 [ 1 ] {} <Debug> ConfigReloader: Loaded config '/etc/clickhouse-server/config.xml', performed update on configuration
+2026.03.18 17:29:37.248023 [ 1 ] {} <Information> Application: Ready for connections.
+2026.03.18 17:29:38.000449 [ 67 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 140.28 MiB, peak 145.27 MiB, free memory in arenas 16.93 MiB, will set to 143.71 MiB (RSS), difference: 3.44 MiB
+2026.03.18 17:34:35.000353 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:34:57.062823 [ 35 ] {} <Trace> BaseDaemon: Received signal 15
+2026.03.18 17:34:57.062873 [ 35 ] {} <Information> Application: Received termination signal (Terminated)
+2026.03.18 17:34:57.063452 [ 1 ] {} <Information> Application: Shutting down.
+2026.03.18 17:34:57.064816 [ 1 ] {} <Debug> Application: Waiting for current connections to Keeper to finish.
+2026.03.18 17:34:57.097076 [ 1 ] {} <Information> Application: Closed all listening sockets.
+2026.03.18 17:34:57.097094 [ 1 ] {} <Information> Application: Closed connections to Keeper.
+2026.03.18 17:34:57.097102 [ 1 ] {} <Debug> KeeperDispatcher: Shutting down storage dispatcher
+2026.03.18 17:34:57.445161 [ 58 ] {} <Error> RaftInstance: session 1 failed to read rpc header from socket ::ffff:172.18.0.2:58038 due to error 2, End of file, ref count 1
+2026.03.18 17:34:57.487827 [ 1 ] {} <Information> RaftInstance: shutting down raft core
+2026.03.18 17:34:57.488510 [ 1 ] {} <Information> RaftInstance: sent stop signal to the commit thread.
+2026.03.18 17:34:57.488669 [ 1 ] {} <Information> RaftInstance: cancelled all schedulers.
+2026.03.18 17:34:57.488678 [ 1 ] {} <Information> RaftInstance: commit thread stopped.
+2026.03.18 17:34:57.488682 [ 1 ] {} <Information> RaftInstance: all pending commit elements dropped.
+2026.03.18 17:34:57.488687 [ 1 ] {} <Information> RaftInstance: reset all pointers.
+2026.03.18 17:34:57.488691 [ 1 ] {} <Information> RaftInstance: joined terminated commit thread.
+2026.03.18 17:34:57.488912 [ 1 ] {} <Information> RaftInstance: sent stop signal to background append thread.
+2026.03.18 17:34:57.488914 [ 63 ] {} <Information> RaftInstance: bg append_entries thread terminated
+2026.03.18 17:34:57.489161 [ 1 ] {} <Information> RaftInstance: clean up auto-forwarding queue: 0 elems
+2026.03.18 17:34:57.489170 [ 1 ] {} <Information> RaftInstance: clean up auto-forwarding clients
+2026.03.18 17:34:57.489175 [ 1 ] {} <Information> RaftInstance: raft_server shutdown completed.
+2026.03.18 17:34:57.489179 [ 1 ] {} <Information> RaftInstance: manually create a snapshot on 1
+2026.03.18 17:34:57.489184 [ 1 ] {} <Information> RaftInstance: creating a snapshot for index 1
+2026.03.18 17:34:57.489188 [ 1 ] {} <Information> RaftInstance: create snapshot idx 1 log_term 1
+2026.03.18 17:34:57.489195 [ 1 ] {} <Debug> KeeperStateMachine: Creating snapshot 1
+2026.03.18 17:34:57.489205 [ 1 ] {} <Information> KeeperStateMachine: Creating a snapshot during shutdown because 'create_snapshot_on_exit' is enabled.
+2026.03.18 17:34:57.494625 [ 1 ] {} <Debug> KeeperStateMachine: Created persistent snapshot 1 with path snapshot_1.bin.zstd
+2026.03.18 17:34:57.494637 [ 1 ] {} <Trace> KeeperStateMachine: Clearing garbage after snapshot
+2026.03.18 17:34:57.494641 [ 1 ] {} <Trace> KeeperStateMachine: Cleared garbage after snapshot
+2026.03.18 17:34:57.494650 [ 1 ] {} <Information> RaftInstance: snapshot idx 1 log_term 1 created, compact the log store if needed
+2026.03.18 17:34:57.494655 [ 1 ] {} <Information> KeeperStateMachine: Uploading snapshot snapshot_1.bin.zstd during shutdown because 'upload_snapshot_on_exit' is enabled.
+2026.03.18 17:34:57.494770 [ 1 ] {} <Information> RaftInstance: create snapshot idx 1 log_term 1 done: 5575 us elapsed
+2026.03.18 17:34:57.494818 [ 57 ] {} <Error> RaftInstance: failed to accept a rpc connection due to error 125, Operation canceled
+2026.03.18 17:34:57.505607 [ 53 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 15
+2026.03.18 17:34:57.505654 [ 49 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 14
+2026.03.18 17:34:57.505686 [ 55 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 13
+2026.03.18 17:34:57.505867 [ 51 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 12
+2026.03.18 17:34:57.505911 [ 54 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 11
+2026.03.18 17:34:57.506382 [ 61 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 10
+2026.03.18 17:34:57.506452 [ 50 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 9
+2026.03.18 17:34:57.506461 [ 56 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 8
+2026.03.18 17:34:57.506509 [ 47 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 7
+2026.03.18 17:34:57.506525 [ 52 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 6
+2026.03.18 17:34:57.506547 [ 48 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 5
+2026.03.18 17:34:57.506809 [ 57 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 3
+2026.03.18 17:34:57.506826 [ 58 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 2
+2026.03.18 17:34:57.507056 [ 60 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 1
+2026.03.18 17:34:57.506603 [ 59 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 4
+2026.03.18 17:34:57.507407 [ 46 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 0
+2026.03.18 17:34:57.509388 [ 45 ] {} <Warning> KeeperLogStore: Raft server is not set in LogStore.
+2026.03.18 17:34:57.510575 [ 1 ] {} <Debug> KeeperSnapshotManagerS3: Shutting down KeeperSnapshotManagerS3
+2026.03.18 17:34:57.510929 [ 1 ] {} <Information> KeeperSnapshotManagerS3: KeeperSnapshotManagerS3 shut down
+2026.03.18 17:34:57.510939 [ 1 ] {} <Debug> KeeperDispatcher: Dispatcher shut down
+2026.03.18 17:34:57.510945 [ 1 ] {} <Debug> Application: Destroyed global context.
+2026.03.18 17:34:57.511137 [ 1 ] {} <Trace> Context: Shutting down named sessions
+2026.03.18 17:34:57.511149 [ 1 ] {} <Trace> Context: Shutting down database catalog
+2026.03.18 17:34:57.511153 [ 1 ] {} <Trace> DatabaseCatalog: Shutting down system databases
+2026.03.18 17:34:57.511164 [ 1 ] {} <Trace> Context: Shutting down DDLWorker
+2026.03.18 17:34:57.511167 [ 1 ] {} <Trace> Context: Shutting down caches
+2026.03.18 17:34:57.511175 [ 1 ] {} <Trace> Context: Shutting down AccessControl
+2026.03.18 17:34:57.511258 [ 1 ] {} <Warning> KeeperLogStore: Changelog is shut down
+2026.03.18 17:34:57.518199 [ 1 ] {} <Information> Application: shutting down
+2026.03.18 17:34:57.518230 [ 1 ] {} <Debug> Application: Uninitializing subsystem: Logging Subsystem
+2026.03.18 17:34:57.518262 [ 35 ] {} <Trace> BaseDaemon: Received signal -2
+2026.03.18 17:34:57.518268 [ 35 ] {} <Information> BaseDaemon: Stop SignalListener thread
+2026.03.18 17:35:30.394231 [ 1 ] {} <Information> SentryWriter: Sending crash reports is disabled
+2026.03.18 17:35:30.394301 [ 1 ] {} <Trace> Pipe: Pipe capacity is 1.00 MiB
+2026.03.18 17:35:30.511766 [ 1 ] {} <Information> : Starting ClickHouse Keeper 23.8.16.16(revision : 54477, git hash: b80cac57eadd2bdad0ea44f54a262f5bd79e70b8, build id: 7D8F3AE700A95C8301ADF246CAD61375591B4B2E), PID 1
+2026.03.18 17:35:30.511835 [ 1 ] {} <Information> Application: starting up
+2026.03.18 17:35:30.511850 [ 1 ] {} <Information> Application: OS Name = Linux, OS Version = 6.17.0-14-generic, OS Architecture = x86_64
+2026.03.18 17:35:30.512156 [ 1 ] {} <Debug> Application: Initializing DateLUT.
+2026.03.18 17:35:30.512167 [ 1 ] {} <Trace> Application: Initialized DateLUT with time zone 'UTC'.
+2026.03.18 17:35:30.515475 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/class/thermal
+2026.03.18 17:35:30.515506 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:35:30.515642 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/devices/system/edac
+2026.03.18 17:35:30.515676 [ 1 ] {} <Trace> AsynchronousMetrics: Scanning /sys/class/hwmon
+2026.03.18 17:35:30.515791 [ 1 ] {} <Information> Context: Cannot connect to ZooKeeper (or Keeper) before internal Keeper start, will wait for Keeper synchronously
+2026.03.18 17:35:30.515802 [ 1 ] {} <Debug> KeeperDispatcher: Initializing storage dispatcher
+2026.03.18 17:35:30.516424 [ 1 ] {} <Information> KeeperContext: Keeper feature flag FILTERED_LIST: enabled
+2026.03.18 17:35:30.516434 [ 1 ] {} <Information> KeeperContext: Keeper feature flag MULTI_READ: enabled
+2026.03.18 17:35:30.516454 [ 1 ] {} <Information> KeeperContext: Keeper feature flag CHECK_NOT_EXISTS: disabled
+2026.03.18 17:35:30.516534 [ 1 ] {} <Trace> KeeperSnapshotManager: Reading from disk LocalSnapshotDisk
+2026.03.18 17:35:30.516658 [ 1 ] {} <Trace> KeeperSnapshotManager: Found snapshot_1.bin.zstd on LocalSnapshotDisk
+2026.03.18 17:35:30.519130 [ 1 ] {} <Trace> KeeperLogStore: Reading from disk LocalLogDisk
+2026.03.18 17:35:30.519489 [ 1 ] {} <Trace> KeeperLogStore: Found changelog_1_100000.bin.zstd on LocalLogDisk
+2026.03.18 17:35:30.520127 [ 1 ] {} <Information> KeeperLogStore: force_sync enabled
+2026.03.18 17:35:30.520137 [ 1 ] {} <Debug> KeeperDispatcher: Waiting server to initialize
+2026.03.18 17:35:30.520141 [ 1 ] {} <Debug> KeeperStateMachine: Totally have 1 snapshots
+2026.03.18 17:35:30.520144 [ 1 ] {} <Debug> KeeperStateMachine: Trying to load state machine from snapshot up to log index 1
+2026.03.18 17:35:30.520694 [ 1 ] {} <Debug> KeeperStateMachine: Loaded snapshot with last committed log index 1
+2026.03.18 17:35:30.520794 [ 1 ] {} <Trace> KeeperLogStore: Totally read from changelog changelog_1_100000.bin.zstd 1 entries
+2026.03.18 17:35:30.520805 [ 1 ] {} <Trace> KeeperLogStore: Continue to write into changelog_1_100000.bin.zstd
+2026.03.18 17:35:30.520860 [ 1 ] {} <Information> KeeperServer: Preprocessing 0 log entries
+2026.03.18 17:35:30.520865 [ 1 ] {} <Information> KeeperServer: Preprocessing done
+2026.03.18 17:35:30.520877 [ 1 ] {} <Information> KeeperServer: Will use config from log store with log index 1
+2026.03.18 17:35:30.533218 [ 1 ] {} <Information> RaftInstance: Raft ASIO listener initiated on :::9444, unsecured
+2026.03.18 17:35:30.533302 [ 1 ] {} <Information> KeeperStateManager: Read state from /var/lib/clickhouse/coordination/state
+2026.03.18 17:35:30.533320 [ 1 ] {} <Information> RaftInstance: parameters: election timeout range 2000 - 4000, heartbeat 1000, leadership expiry 20000, max batch 100, backoff 50, snapshot distance 10000, enable randomized snapshot creation NO, log sync stop gap 99999, reserved logs 100000, client timeout 10000, auto forwarding on, API call type async, custom commit quorum size 0, custom election quorum size 0, snapshot receiver included, leadership transfer wait time 0, grace period of lagging state machine 0, snapshot IO: blocking, parallel log appending: on
+2026.03.18 17:35:30.533326 [ 1 ] {} <Information> RaftInstance: new election timeout range: 2000 - 4000
+2026.03.18 17:35:30.533334 [ 1 ] {} <Information> RaftInstance:    === INIT RAFT SERVER ===
+commit index 1
+term 1
+election timer allowed
+log store start 1, end 1
+config log idx 1, prev log idx 0
+2026.03.18 17:35:30.533422 [ 1 ] {} <Information> RaftInstance: peer 1: DC ID 0, clickhouse-keeper1:9444, voting member, 1
+peer 2: DC ID 0, clickhouse-keeper2:9444, voting member, 1
+peer 3: DC ID 0, clickhouse-keeper3:9444, voting member, 1
+my id: 1, voting_member
+num peers: 2
+2026.03.18 17:35:30.533428 [ 1 ] {} <Information> RaftInstance: global manager does not exist. will use local thread for commit and append
+2026.03.18 17:35:30.533560 [ 63 ] {} <Information> RaftInstance: bg append_entries thread initiated
+2026.03.18 17:35:30.533584 [ 1 ] {} <Information> RaftInstance: wait for HB, for 50 + [2000, 4000] ms
+2026.03.18 17:35:30.583767 [ 1 ] {} <Debug> KeeperDispatcher: Server initialized, waiting for quorum
+2026.03.18 17:35:33.251371 [ 47 ] {} <Information> RaftInstance: receive a incoming rpc connection
+2026.03.18 17:35:33.251612 [ 47 ] {} <Information> RaftInstance: session 1 got connection from ::ffff:172.18.0.4:46192 (as a server)
+2026.03.18 17:35:33.251697 [ 47 ] {} <Information> RaftInstance: [PRE-VOTE REQ] my role follower, from peer 3, log term: req 1 / mine 1
+last idx: req 1 / mine 1, term: req 1 / mine 1
+HB dead
+2026.03.18 17:35:33.251702 [ 47 ] {} <Information> RaftInstance: pre-vote decision: O (grant)
+2026.03.18 17:35:33.257628 [ 51 ] {} <Debug> IDisk: Copying from LocalStateFileDisk (path: /var/lib/clickhouse/coordination) state to LocalStateFileDisk (path: /var/lib/clickhouse/coordination) state-OLD.
+2026.03.18 17:35:33.261096 [ 51 ] {} <Information> RaftInstance: [BECOME FOLLOWER] term 2
+2026.03.18 17:35:33.261150 [ 51 ] {} <Information> RaftInstance: [PRIORITY] decay, target 1 -> 1, mine 1
+2026.03.18 17:35:33.261157 [ 51 ] {} <Information> RaftInstance: [VOTE REQ] my role follower, from peer 3, log term: req 1 / mine 1
+last idx: req 1 / mine 1, term: req 2 / mine 2
+priority: target 1 / mine 1, voted_for -1
+2026.03.18 17:35:33.261161 [ 51 ] {} <Information> RaftInstance: decision: O (grant), voted_for 3, term 2
+2026.03.18 17:35:33.261196 [ 51 ] {} <Debug> IDisk: Copying from LocalStateFileDisk (path: /var/lib/clickhouse/coordination) state to LocalStateFileDisk (path: /var/lib/clickhouse/coordination) state-OLD.
+2026.03.18 17:35:33.272834 [ 53 ] {} <Information> RaftInstance: receive a config change from leader at 2
+2026.03.18 17:35:33.273023 [ 1 ] {} <Debug> KeeperDispatcher: Quorum initialized
+2026.03.18 17:35:33.273449 [ 1 ] {} <Debug> KeeperDispatcher: Dispatcher initialized
+2026.03.18 17:35:33.274557 [ 62 ] {} <Information> RaftInstance: config at index 2 is committed, prev config log idx 1
+2026.03.18 17:35:33.274581 [ 62 ] {} <Information> RaftInstance: new config log idx 2, prev log idx 1, cur config log idx 1, prev log idx 0
+2026.03.18 17:35:33.274676 [ 62 ] {} <Information> RaftInstance: new configuration: log idx 2, prev log idx 1
+peer 1, DC ID 0, clickhouse-keeper1:9444, voting member, 1
+peer 2, DC ID 0, clickhouse-keeper2:9444, voting member, 1
+peer 3, DC ID 0, clickhouse-keeper3:9444, voting member, 1
+my id: 1, leader: 3, term: 2
+2026.03.18 17:35:33.274863 [ 1 ] {} <Warning> Application: Listen [::]:2181 failed: Poco::Exception. Code: 1000, e.code() = 0, DNS error: EAI: Address family for hostname not supported (version 23.8.16.16 (official build)). If it is an IPv6 or IPv4 address and your host has disabled IPv6 or IPv4, then consider to specify not disabled IPv4 or IPv6 address to listen in <listen_host> element of configuration file. Example for disabled IPv6: <listen_host>0.0.0.0</listen_host> . Example for disabled IPv4: <listen_host>::</listen_host>
+2026.03.18 17:35:33.274963 [ 1 ] {} <Information> Application: Listening for Keeper (tcp): 0.0.0.0:2181
+2026.03.18 17:35:33.275719 [ 1 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 84.29 KiB, peak 2.07 MiB, free memory in arenas 26.87 MiB, will set to 151.08 MiB (RSS), difference: 151.00 MiB
+2026.03.18 17:35:33.276992 [ 1 ] {} <Debug> ConfigReloader: Loading config '/etc/clickhouse-server/config.xml'
+2026.03.18 17:35:33.277910 [ 1 ] {} <Debug> ConfigReloader: Loaded config '/etc/clickhouse-server/config.xml', performing update on configuration
+2026.03.18 17:35:33.281209 [ 1 ] {} <Trace> KeeperDispatcher: Configuration update triggered, but nothing changed for Raft
+2026.03.18 17:35:33.281234 [ 1 ] {} <Information> CertificateReloader: One of paths is empty. Cannot apply new configuration for certificates. Fill all paths and try again.
+2026.03.18 17:35:33.281238 [ 1 ] {} <Debug> ConfigReloader: Loaded config '/etc/clickhouse-server/config.xml', performed update on configuration
+2026.03.18 17:35:33.282920 [ 1 ] {} <Information> Application: Ready for connections.
+2026.03.18 17:35:34.003647 [ 67 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 153.42 MiB, peak 158.41 MiB, free memory in arenas 14.07 MiB, will set to 151.74 MiB (RSS), difference: -1.68 MiB
+2026.03.18 17:35:36.547086 [ 36 ] {} <Trace> KeeperTCPHandlerFactory: Keeper request. Address: 172.18.0.6:59928
+2026.03.18 17:35:36.547281 [ 36 ] {} <Information> KeeperTCPHandler: Requesting session ID for the new client
+2026.03.18 17:35:36.547416 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:35:36.549018 [ 56 ] {} <Information> RaftInstance: 0x74dcd909c018 connected to clickhouse-keeper3:9444 (as a client)
+2026.03.18 17:35:36.557705 [ 62 ] {} <Debug> KeeperStateMachine: Session ID response 1 with timeout 30000
+2026.03.18 17:35:36.558256 [ 36 ] {} <Information> KeeperTCPHandler: Received session ID 1
+2026.03.18 17:35:36.560377 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 1
+2026.03.18 17:35:36.568592 [ 62 ] {} <Debug> KeeperStateMachine: Session ID response 2 with timeout 30000
+2026.03.18 17:35:36.568995 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:35:36.582595 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 85
+2026.03.18 17:35:36.598805 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 74
+2026.03.18 17:35:36.611173 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 85
+2026.03.18 17:35:36.626305 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:35:36.764899 [ 62 ] {} <Debug> KeeperStateMachine: Session ID response 3 with timeout 30000
+2026.03.18 17:35:46.559908 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:35:46.559944 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:35:56.559665 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:35:56.559777 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:36:06.559650 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:36:06.559765 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:36:16.559821 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:36:16.559884 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:36:26.560363 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:36:26.560468 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:36:34.344193 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:36:34.357668 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 488
+2026.03.18 17:36:34.379556 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 17:36:34.390317 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 17:36:34.417159 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 426
+2026.03.18 17:36:36.036239 [ 67 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 153.25 MiB, peak 158.41 MiB, free memory in arenas 4.32 MiB, will set to 135.24 MiB (RSS), difference: -18.00 MiB
+2026.03.18 17:36:36.572252 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:36:36.572335 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:36:39.006649 [ 67 ] {} <Trace> AsynchronousMetrics: MemoryTracking: was 135.24 MiB, peak 158.41 MiB, free memory in arenas 4.32 MiB, will set to 130.43 MiB (RSS), difference: -4.81 MiB
+2026.03.18 17:36:46.581072 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:36:46.581140 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:36:48.408852 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:36:48.414682 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 536
+2026.03.18 17:36:48.426612 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 17:36:48.454881 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 17:36:48.500242 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 17:36:56.582201 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:36:56.582317 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:37:06.598437 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:37:06.598584 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:37:16.598422 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:37:16.598481 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:37:26.599053 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:37:26.599165 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:37:36.615140 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:37:36.615273 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:37:40.609840 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:37:40.617402 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 899
+2026.03.18 17:37:40.638331 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 17:37:40.657180 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 17:37:40.679829 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 17:37:46.615253 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:37:46.615500 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:37:54.710774 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:37:54.718989 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 878
+2026.03.18 17:37:54.758285 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 17:37:54.765941 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 17:37:54.794093 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 17:37:56.615306 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:37:56.615439 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:38:06.616595 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:38:06.616652 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:38:09.074894 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:38:09.085361 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 872
+2026.03.18 17:38:09.092657 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 17:38:09.097436 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 17:38:09.142639 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 17:38:16.619109 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:38:16.619216 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:38:26.536478 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:38:26.548388 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 809
+2026.03.18 17:38:26.557962 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 17:38:26.564703 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 17:38:26.601358 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 17:38:26.619825 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:38:26.619883 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:38:36.625071 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:38:36.625147 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:38:46.660465 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:38:46.660681 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:38:56.668494 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:38:56.668549 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:39:03.680345 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:39:03.697223 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 933
+2026.03.18 17:39:03.709076 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 17:39:03.723097 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 17:39:03.749271 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 17:39:06.672709 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:39:06.672769 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:39:16.672686 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:39:16.672766 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:39:18.986057 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:39:18.995705 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 820
+2026.03.18 17:39:19.004445 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 17:39:19.029914 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 17:39:19.056794 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 17:39:26.673719 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:39:26.673867 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:39:36.681213 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:39:36.681322 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:39:46.683462 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:39:46.683510 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:39:48.525276 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:39:48.530714 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 862
+2026.03.18 17:39:48.549634 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 17:39:48.567361 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 17:39:48.592231 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 17:39:56.683579 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:39:56.683643 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:40:06.808190 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:40:06.808283 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:40:16.860183 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:40:16.860255 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:40:26.864404 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:40:26.864485 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:40:31.001393 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:40:36.864393 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:40:36.864464 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:40:46.864534 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:40:46.864623 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:40:56.921684 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:40:56.921752 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:41:06.921671 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:41:06.921860 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:41:16.921652 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:41:16.921718 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:41:26.921681 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:41:26.921763 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:41:31.398656 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:41:31.407338 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 494
+2026.03.18 17:41:31.431116 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 17:41:31.440632 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 17:41:31.472860 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 17:41:36.921842 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:41:36.921886 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:41:46.952402 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:41:46.952527 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:41:56.952318 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:41:56.952416 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:42:06.952327 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:42:06.952440 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:42:10.609247 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:42:10.621345 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 856
+2026.03.18 17:42:10.639345 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 17:42:10.648254 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 17:42:10.683247 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 17:42:16.955276 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:42:16.955367 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:42:27.053644 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:42:27.053760 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:42:32.690768 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 17:42:32.700948 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 833
+2026.03.18 17:42:32.712508 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 17:42:32.748617 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 17:42:32.773168 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 17:42:37.053432 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:42:37.053491 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:42:47.053380 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:42:47.053443 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:42:57.055115 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:42:57.055204 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:43:07.083309 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:43:07.083422 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:43:17.083171 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:43:17.083253 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:43:27.083870 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:43:27.083924 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:43:37.092849 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:43:37.092933 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:43:47.098253 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:43:47.098407 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:43:57.098302 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:43:57.098361 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:44:07.104684 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:44:07.104815 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:44:17.138933 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:44:17.138976 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:44:27.146770 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:44:27.146897 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:44:37.162788 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:44:37.162850 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:44:47.220917 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:44:47.220990 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:44:57.265180 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:44:57.265237 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:45:07.354596 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:45:07.354900 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:45:17.354719 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:45:17.355052 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:45:27.389079 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:45:27.389190 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:45:31.213059 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:45:37.396496 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:45:37.396723 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:45:47.432224 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:45:47.432312 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:45:57.435207 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:45:57.435274 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:46:07.435364 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:46:07.435473 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:46:17.435297 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:46:17.435388 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:46:27.444429 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:46:27.444852 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:46:38.029289 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:46:38.029343 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:46:48.029532 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:46:48.029555 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:46:58.048550 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:46:58.048956 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:47:08.048589 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:47:08.048640 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:47:18.140061 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:47:18.140104 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:47:28.172907 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:47:28.172912 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:47:38.178939 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:47:38.178957 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:47:48.200116 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:47:48.200124 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:47:58.204343 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:47:58.204485 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:48:08.209612 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:48:08.209693 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:48:18.224685 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:48:18.224715 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:48:28.226917 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:48:28.226939 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:48:38.289762 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:48:38.289806 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:48:48.294163 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:48:48.294255 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:48:58.294190 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:48:58.294294 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:49:08.294216 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:49:08.294599 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:49:18.296935 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:49:18.297079 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:49:28.296950 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:49:28.297091 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:49:38.298267 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:49:38.298380 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:49:48.324281 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:49:48.324394 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:49:58.347511 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:49:58.347623 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:50:08.395209 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:50:08.395270 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:50:18.399478 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:50:18.399565 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:50:28.401765 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:50:28.401965 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:50:32.024139 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:50:38.401865 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:50:38.401998 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:50:48.402115 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:50:48.402314 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:50:58.403130 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:50:58.403231 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:51:08.403215 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:51:08.403365 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:51:18.445299 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:51:18.445313 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:51:28.464967 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:51:28.465004 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:51:38.465478 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:51:38.465688 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:51:48.465710 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:51:48.465889 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:51:58.465874 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:51:58.465927 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:52:08.465851 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:52:08.465887 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:52:18.466007 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:52:18.466220 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:52:28.467521 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:52:28.467642 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:52:38.467385 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:52:38.467894 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:52:48.468269 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:52:48.468369 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:52:58.468319 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:52:58.468428 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:53:08.468281 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:53:08.468425 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:53:18.468216 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:53:18.468374 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:53:28.468243 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:53:28.468335 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:53:38.472243 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:53:38.472368 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:53:48.472204 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:53:48.472287 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:53:58.472240 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:53:58.472303 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:54:08.472305 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:54:08.472397 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:54:18.486510 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:54:18.486588 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:54:28.537782 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:54:28.537886 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:54:38.539063 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:54:38.541459 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:54:48.633369 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:54:48.633447 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:54:58.732188 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:54:58.732274 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:55:08.833522 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:55:08.833621 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:55:18.867287 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:55:18.867378 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:55:28.877210 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:55:28.877330 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:55:32.078277 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 17:55:38.885909 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:55:38.885953 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:55:48.912207 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:55:48.912276 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:55:58.918787 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:55:58.918923 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:56:08.935812 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:56:08.935928 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:56:18.935838 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:56:18.936086 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:56:28.939025 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:56:28.939087 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:56:39.003179 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:56:39.003230 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:56:49.004814 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:56:49.004889 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:56:59.141040 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:56:59.141085 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:57:09.141216 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:57:09.141338 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:57:19.141686 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:57:19.141795 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:57:29.141681 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:57:29.141852 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:57:39.142180 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:57:39.142306 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:57:49.142716 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:57:49.142899 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:57:59.142806 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:57:59.142897 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:58:09.241615 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:58:09.241670 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:58:19.241838 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:58:19.241865 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:58:29.248925 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:58:29.248990 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:58:39.250092 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:58:39.250202 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:58:49.255589 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:58:49.255682 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:58:59.339727 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:58:59.339790 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:59:09.392727 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:59:09.392874 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:59:19.392799 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:59:19.392723 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:59:29.392882 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:59:29.392916 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:59:39.392734 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:59:39.392840 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:59:49.409171 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:59:49.409209 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 17:59:59.409164 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 17:59:59.409303 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:00:09.409521 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:00:09.409645 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:00:19.410104 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:00:19.410199 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:00:29.410066 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:00:29.410180 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:00:32.103508 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:00:39.412601 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:00:39.412671 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:00:49.412823 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:00:49.412938 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:00:59.412795 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:00:59.412924 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:01:09.413198 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:01:09.413289 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:01:19.414150 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:01:19.414275 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:01:29.421331 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:01:29.421442 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:01:39.421315 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:01:39.421579 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:01:49.421353 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:01:49.421456 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:01:59.422134 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:01:59.422233 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:02:09.422107 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:02:09.422305 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:02:19.423763 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:02:19.423933 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:02:29.425324 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:02:29.425457 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:02:39.427272 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:02:39.427414 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:02:49.427678 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:02:49.427824 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:02:59.429315 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:02:59.429411 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:03:09.431076 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:03:09.431267 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:03:19.431114 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:03:19.431208 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:03:29.431108 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:03:29.431178 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:03:39.433324 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:03:39.433428 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:03:49.434693 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:03:49.434763 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:03:59.434823 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:03:59.434899 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:04:09.560533 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:04:09.560644 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:04:19.603728 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:04:19.603858 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:04:29.626214 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:04:29.626306 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:04:39.711929 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:04:39.712257 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:04:49.730150 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:04:49.730243 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:04:59.736449 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:04:59.736511 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:05:09.736442 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:05:09.736506 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:05:19.749428 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:05:19.749486 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:05:29.802013 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:05:29.802105 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:05:33.001453 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:05:39.812631 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:05:39.812711 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:05:49.915880 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:05:49.915978 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:05:59.975583 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:05:59.975673 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:06:10.058564 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:06:10.058627 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:06:20.058730 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:06:20.058872 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:06:30.063295 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:06:30.063044 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:06:40.081181 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:06:40.081274 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:06:50.090334 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:06:50.090442 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:07:00.133600 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:07:00.133727 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:07:10.136281 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:07:10.136372 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:07:20.140906 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:07:20.140953 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:07:30.153724 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:07:30.153881 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:07:40.153843 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:07:40.153924 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:07:50.165100 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:07:50.165164 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:08:00.168473 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:08:00.168570 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:08:10.180333 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:08:10.180395 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:08:20.198528 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:08:20.198589 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:08:30.319364 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:08:30.319511 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:08:40.319569 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:08:40.319455 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:08:50.321020 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:08:50.321057 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:09:00.324897 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:09:00.324971 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:09:10.347504 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:09:10.347588 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:09:20.422244 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:09:20.422328 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:09:30.422471 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:09:30.422563 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:09:40.434855 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:09:40.434937 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:09:50.441563 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:09:50.441649 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:10:00.454384 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:10:00.454445 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:10:10.565903 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:10:10.565966 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:10:20.655625 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:10:20.655682 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:10:30.662754 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:10:30.662813 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:10:34.000826 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:10:40.730186 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:10:40.730489 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:10:50.779574 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:10:50.779961 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:11:00.845777 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:11:00.845858 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:11:10.849274 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:11:10.849334 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:11:20.904961 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:11:20.905033 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:11:30.913417 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:11:30.913496 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:11:40.913376 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:11:40.913456 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:11:50.918219 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:11:50.918278 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:12:00.920382 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:12:00.920488 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:12:10.921251 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:12:10.921371 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:12:20.975201 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:12:20.975289 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:12:31.056418 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:12:31.056661 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:12:41.057240 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:12:41.057708 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:12:51.064230 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:12:51.064287 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:13:01.062664 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:13:01.062825 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:13:11.109961 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:13:11.110278 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:13:21.124152 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:13:21.124227 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:13:31.174203 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:13:31.174513 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:13:41.217544 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:13:41.217998 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:13:51.219728 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:13:51.219737 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:14:01.290550 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:14:01.290651 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:14:11.294690 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:14:11.294750 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:14:21.297236 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:14:21.297297 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:14:31.297780 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:14:31.297727 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:14:41.299823 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:14:41.299828 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:14:51.299979 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:14:51.300063 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:15:01.302644 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:15:01.302711 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:15:11.304023 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:15:11.304160 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:15:21.313391 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:15:21.313453 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:15:31.313828 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:15:31.314030 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:15:35.000724 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:15:41.314186 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:15:41.314277 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:15:51.314207 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:15:51.314438 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:16:01.314201 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:16:01.314264 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:16:11.317375 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:16:11.317463 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:16:21.318258 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:16:21.318346 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:16:31.394580 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:16:31.394664 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:16:41.394718 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:16:41.394796 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:16:51.400928 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:16:51.400976 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:17:01.400802 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:17:01.400896 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:17:11.420235 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:17:11.420321 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:17:21.424573 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:17:21.425033 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:17:31.430871 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:17:31.430919 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:17:41.437013 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:17:41.437074 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:17:51.507619 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:17:51.507815 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:18:01.576148 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:18:01.576251 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:18:11.628180 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:18:11.628237 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:18:21.640124 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:18:21.640199 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:18:31.648240 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:18:31.648324 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:18:41.648318 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:18:41.648400 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:18:51.662620 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:18:51.662737 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:19:01.666228 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:19:01.666312 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:19:11.673373 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:19:11.673432 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:19:21.677058 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:19:21.677119 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:19:31.677029 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:19:31.677111 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:19:41.676915 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:19:41.677029 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:19:51.676888 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:19:51.676981 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:20:01.676951 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:20:01.677017 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:20:11.688646 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:20:11.689377 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:20:21.688928 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:20:21.689051 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:20:31.688790 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:20:31.688845 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:20:35.011912 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:20:41.719335 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:20:41.719437 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:20:51.719474 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:20:51.719539 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:21:01.719376 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:21:01.719412 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:21:11.719342 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:21:11.719514 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:21:21.755905 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:21:21.755937 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:21:31.757643 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:21:31.757801 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:21:41.850515 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:21:41.850590 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:21:51.857988 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:21:51.858070 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:22:01.857969 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:22:01.858005 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:22:11.858440 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:22:11.858595 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:22:21.858292 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:22:21.858372 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:22:31.940674 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:22:31.940707 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:22:41.940982 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:22:41.941061 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:22:51.941983 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:22:51.942042 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:23:01.948644 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:23:01.948712 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:23:11.953086 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:23:11.953245 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:23:21.955078 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:23:21.955219 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:23:31.955004 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:23:31.955272 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:23:41.956342 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:23:41.956402 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:23:51.956512 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:23:51.956592 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:24:01.956572 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:24:01.956632 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:24:11.956833 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:24:11.956874 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:24:21.956607 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:24:21.956641 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:24:31.961762 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:24:31.961864 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:24:41.970198 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:24:41.970273 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:24:51.970166 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:24:51.970228 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:25:01.976655 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:25:01.976754 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:25:12.052436 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:25:12.052701 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:25:22.055574 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:25:22.055681 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:25:32.056030 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:25:32.056135 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:25:36.000958 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:25:42.074419 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:25:42.074479 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:25:52.082822 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:25:52.082924 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:26:02.084941 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:26:02.084992 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:26:12.084861 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:26:12.085028 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:26:22.111875 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:26:22.111959 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:26:32.192313 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:26:32.192408 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:26:42.192467 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:26:42.192556 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:26:52.192497 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:26:52.192718 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:27:02.192453 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:27:02.192540 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:27:12.200273 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:27:12.200376 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:27:22.261656 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:27:22.261826 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:27:32.261755 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:27:32.262160 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:27:42.301461 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:27:42.301511 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:27:52.370396 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:27:52.370512 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:28:02.384345 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:28:02.384436 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:28:12.384402 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:28:12.384496 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:28:22.392848 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:28:22.392949 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:28:32.396269 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:28:32.396343 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:28:42.397996 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:28:42.398099 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:28:52.398352 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:28:52.398455 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:29:02.398413 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:29:02.398487 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:29:12.398479 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:29:12.398601 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:29:22.398624 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:29:22.398931 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:29:32.399297 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:29:32.399392 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:29:42.399617 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:29:42.399719 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:29:52.399641 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:29:52.399748 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:30:02.400881 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:30:02.400991 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:30:12.433350 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:30:12.433429 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:30:22.442659 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:30:22.442782 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:30:32.448591 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:30:32.448702 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:30:37.182219 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:30:42.448483 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:30:42.448495 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:30:52.453427 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:30:52.453490 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:31:02.456836 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:31:02.456893 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:31:12.475869 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:31:12.475994 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:31:22.480847 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:31:22.480925 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:31:32.480893 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:31:32.480916 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:31:42.481075 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:31:42.481197 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:31:52.484833 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:31:52.484899 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:32:02.484756 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:32:02.484827 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:32:12.485703 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:32:12.485955 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:32:22.488155 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:32:22.488248 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:32:32.488203 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:32:32.488256 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:32:42.488156 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:32:42.488260 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:32:52.488160 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:32:52.488243 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:33:02.488172 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:33:02.488270 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:33:12.488267 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:33:12.488464 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:33:22.491524 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:33:22.491646 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:33:32.491519 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:33:32.491582 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:33:42.491470 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:33:42.491539 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:33:52.491505 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:33:52.491607 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:34:02.564162 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:34:02.564252 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:34:12.564349 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:34:12.564458 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:34:22.568154 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:34:22.568260 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:34:32.601535 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:34:32.601572 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:34:42.713528 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:34:42.713581 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:34:52.713654 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:34:52.713754 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:35:02.719039 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:35:02.719127 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:35:12.756382 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:35:12.756731 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:35:22.781579 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:35:22.781679 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:35:32.781606 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:35:32.781754 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:35:38.003121 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:35:42.781548 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:35:42.781589 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:35:52.815353 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:35:52.815342 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:36:02.815314 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:36:02.815387 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:36:12.818262 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:36:12.818403 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:36:22.847293 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:36:22.847380 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:36:32.848957 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:36:32.849065 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:36:42.851839 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:36:42.851968 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:36:52.868057 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:36:52.868117 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:37:02.868159 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:37:02.868242 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:37:12.868711 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:37:12.868827 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:37:22.870016 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:37:22.870138 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:37:32.870533 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:37:32.870602 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:37:42.870579 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:37:42.870692 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:37:52.874693 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:37:52.874822 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:38:02.875193 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:38:02.875335 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:38:12.875257 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:38:12.875320 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:38:22.875455 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:38:22.875520 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:38:32.875251 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:38:32.875345 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:38:42.876235 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:38:42.876368 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:38:52.942241 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:38:52.942305 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:39:02.943119 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:39:02.943185 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:39:12.943344 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:39:12.943486 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:39:22.943518 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:39:22.943655 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:39:32.943574 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:39:32.943664 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:39:42.954935 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:39:42.954960 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:39:52.964520 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:39:52.964629 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:40:03.118037 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:40:03.118096 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:40:13.121047 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:40:13.121142 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:40:23.122843 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:40:23.122917 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:40:33.196377 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:40:33.196468 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:40:39.005855 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:40:43.196615 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:40:43.196867 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:40:53.204380 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:40:53.204466 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:41:03.260842 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:41:03.260935 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:41:13.260850 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:41:13.260914 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:41:23.290903 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:41:23.290956 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:41:33.369972 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:41:33.370028 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:41:43.369957 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:41:43.370043 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:41:53.448891 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:41:53.448931 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:42:03.458132 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:42:03.458209 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:42:13.545256 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:42:13.545320 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:42:23.548264 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:42:23.548352 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:42:33.548273 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:42:33.548333 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:42:43.567477 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:42:43.567559 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:42:53.569718 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:42:53.569872 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:43:03.576300 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:43:03.576426 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:43:13.580443 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:43:13.580529 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:43:23.627176 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:43:23.627305 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:43:33.676268 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:43:33.676337 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:43:43.838281 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:43:43.838319 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:43:53.887526 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:43:53.887840 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:44:03.887461 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:44:03.887574 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:44:13.892285 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:44:13.892362 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:44:23.892239 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:44:23.892340 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:44:33.920922 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:44:33.920986 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:44:43.921985 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:44:43.922044 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:44:53.929076 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:44:53.929151 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:45:03.929740 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:45:03.929972 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:45:13.931982 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:45:13.932199 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:45:23.932008 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:45:23.932038 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:45:33.931978 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:45:33.932073 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:45:40.021546 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:45:43.932725 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:45:43.932809 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:45:53.932908 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:45:53.933013 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:46:03.932847 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:46:03.932957 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:46:13.932982 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:46:13.933092 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:46:23.932908 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:46:23.933061 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:46:33.933027 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:46:33.933109 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:46:43.933072 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:46:43.933142 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:46:53.934316 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:46:53.934382 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:47:03.965074 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:47:03.965166 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:47:13.997892 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:47:13.997985 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:47:24.002134 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:47:24.002229 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:47:34.002817 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:47:34.002873 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:47:44.044774 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:47:44.044849 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:47:54.044629 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:47:54.044925 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:48:04.045943 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:48:04.046038 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:48:12.912145 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 18:48:12.924177 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 833
+2026.03.18 18:48:12.943102 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 18:48:12.969658 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 18:48:13.001381 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 18:48:14.045908 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:48:14.045955 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:48:24.048363 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:48:24.048447 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:48:30.395520 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 18:48:30.406655 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 801
+2026.03.18 18:48:30.415654 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 18:48:30.440577 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 18:48:30.468314 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 18:48:34.054137 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:48:34.054183 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:48:44.058141 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:48:44.058229 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:48:48.226922 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 18:48:48.237459 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 888
+2026.03.18 18:48:48.253387 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 18:48:48.276539 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 18:48:48.292259 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 18:48:54.058972 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:48:54.059075 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:49:04.059053 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:49:04.059147 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:49:14.183241 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:49:14.183353 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:49:24.206256 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:49:24.206357 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:49:34.209702 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:49:34.209806 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:49:44.290875 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:49:44.290941 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:49:54.301122 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:49:54.301241 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:50:04.387446 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:50:04.387573 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:50:14.397894 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:50:14.397952 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:50:23.287484 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 89
+2026.03.18 18:50:23.294770 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 801
+2026.03.18 18:50:23.299437 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 233
+2026.03.18 18:50:23.327111 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 180
+2026.03.18 18:50:23.351241 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 228
+2026.03.18 18:50:24.401007 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:50:24.401217 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:50:34.412504 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:50:34.412564 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:50:41.014442 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:50:44.443530 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:50:44.443593 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:50:54.444433 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:50:54.444512 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:51:04.444407 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:51:04.444462 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:51:14.445215 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:51:14.445331 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:51:24.451545 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:51:24.451628 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:51:34.531084 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:51:34.531209 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:51:44.605267 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:51:44.605341 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:51:54.643464 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:51:54.643522 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:52:04.650135 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:52:04.650199 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:52:14.673685 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:52:14.673747 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:52:24.673751 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:52:24.673929 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:52:34.673942 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:52:34.674014 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:52:44.732286 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:52:44.732347 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:52:54.732206 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:52:54.732251 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:53:04.732241 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:53:04.732295 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:53:14.733359 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:53:14.733422 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:53:24.734763 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:53:24.734848 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:53:34.814342 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:53:34.814404 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:53:44.815093 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:53:44.815181 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:53:54.815279 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:53:54.815214 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:54:04.867219 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:54:04.867281 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:54:14.867902 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:54:14.867971 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:54:24.867874 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:54:24.867973 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:54:34.868004 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:54:34.868213 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:54:44.871339 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:54:44.871454 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:54:54.873411 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:54:54.873478 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:55:04.873407 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:55:04.873502 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:55:14.876292 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:55:14.876394 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:55:24.876367 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:55:24.876434 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:55:34.888143 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:55:34.888246 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:55:41.022343 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 18:55:44.888194 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:55:44.888322 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:55:54.908839 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:55:54.908732 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:56:04.938259 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:56:04.938383 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:56:14.948001 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:56:14.948124 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:56:24.988487 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:56:24.988561 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:56:34.992330 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:56:34.992419 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:56:44.992454 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:56:44.992550 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:56:55.182277 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:56:55.182443 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:57:05.182276 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:57:05.182350 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:57:15.199300 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:57:15.199384 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:57:25.215058 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:57:25.215139 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:57:35.239831 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:57:35.239943 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:57:45.258051 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:57:45.258111 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:57:55.270085 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:57:55.270225 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:58:05.270486 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:58:05.270633 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:58:15.293883 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:58:15.294078 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:58:25.294903 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:58:25.295015 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:58:35.295010 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:58:35.295099 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:58:45.299572 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:58:45.299819 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:58:55.364096 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:58:55.364174 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:59:05.376413 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:59:05.376480 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:59:15.381520 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:59:15.381521 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:59:25.383427 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:59:25.383523 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:59:35.469903 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:59:35.469956 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:59:48.913557 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:59:48.913819 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 18:59:58.913577 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 18:59:58.913677 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:00:08.939300 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:00:08.939316 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:00:18.939363 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:00:18.939451 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:00:28.945234 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:00:28.945316 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:00:38.959552 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:00:38.959630 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:00:42.009014 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:00:48.959573 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:00:48.959775 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:00:58.959599 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:00:58.959668 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:01:08.959530 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:01:08.959573 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:01:19.017514 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:01:19.017539 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:01:29.028828 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:01:29.028857 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:01:39.029320 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:01:39.029370 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:01:49.030732 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:01:49.030750 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:01:59.030927 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:01:59.031058 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:02:09.053243 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:02:09.053346 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:02:19.053514 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:02:19.053542 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:02:29.053253 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:02:29.053321 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:02:39.053430 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:02:39.053715 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:02:49.053880 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:02:49.053899 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:02:59.058761 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:02:59.058760 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:03:09.058828 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:03:09.058836 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:03:19.080805 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:03:19.080905 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:03:29.080969 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:03:29.081048 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:03:39.081273 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:03:39.081372 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:03:49.081222 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:03:49.081340 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:03:59.081313 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:03:59.081375 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:04:09.081100 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:04:09.081187 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:04:19.081128 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:04:19.081170 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:04:29.081397 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:04:29.081420 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:04:39.081399 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:04:39.081496 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:04:49.081316 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:04:49.081369 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:04:59.092922 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:04:59.092986 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:05:09.093185 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:05:09.093253 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:05:19.093023 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:05:19.093103 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:05:29.093594 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:05:29.093758 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:05:39.093604 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:05:39.093672 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:05:43.001399 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:05:49.093598 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:05:49.093668 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:05:59.093740 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:05:59.093750 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:06:09.093625 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:06:09.093724 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:06:19.093792 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:06:19.093860 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:06:29.094387 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:06:29.094471 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:06:39.139966 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:06:39.140035 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:06:49.139982 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:06:49.140093 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:06:59.150654 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:06:59.153532 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:07:09.151927 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:07:09.152031 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:07:19.151826 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:07:19.151873 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:07:29.152922 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:07:29.153032 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:07:39.151872 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:07:39.151930 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:07:49.151866 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:07:49.152020 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:07:59.151948 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:07:59.152064 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:08:09.153587 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:08:09.153699 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:08:19.152225 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:08:19.152317 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:08:29.154920 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:08:29.154915 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:08:39.157257 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:08:39.157330 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:08:49.167144 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:08:49.169561 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:08:59.163044 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:08:59.163353 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:09:09.183515 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:09:09.183615 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:09:19.185667 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:09:19.185782 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:09:29.185416 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:09:29.185470 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:09:39.229000 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:09:39.229078 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:09:49.230590 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:09:49.230666 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:09:59.296731 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:09:59.296817 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:10:09.296881 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:10:09.297084 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:10:19.297476 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:10:19.297560 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:10:29.319552 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:10:29.319610 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:10:39.332853 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:10:39.332887 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:10:44.026200 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:10:49.333202 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:10:49.333322 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:10:59.333313 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:10:59.333415 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:11:09.334739 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:11:09.335003 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:11:19.336125 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:11:19.336192 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:11:29.335984 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:11:29.336041 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:11:39.335931 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:11:39.335941 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:11:49.337879 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:11:49.337972 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:11:59.366645 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:11:59.366912 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:12:09.387380 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:12:09.388019 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:12:19.384957 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:12:19.385001 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:12:29.384931 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:12:29.384989 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:12:39.385090 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:12:39.385193 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:12:49.385128 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:12:49.385261 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:12:59.385558 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:12:59.385710 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:13:09.385597 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:13:09.385711 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:13:19.389402 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:13:19.389476 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:13:29.392530 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:13:29.392597 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:13:39.394038 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:13:39.394130 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:13:49.416486 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:13:49.416561 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:13:59.416369 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:13:59.416469 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:14:09.416302 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:14:09.416378 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:14:19.419976 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:14:19.420078 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:14:29.515387 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:14:29.515426 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:14:39.535202 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:14:39.535279 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:14:49.535327 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:14:49.535339 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:14:59.538653 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:14:59.538778 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:15:09.558131 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:15:09.558198 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:15:19.560146 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:15:19.560214 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:15:29.560188 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:15:29.560265 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:15:39.560057 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:15:39.560093 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:15:45.000551 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:15:49.560594 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:15:49.560711 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:15:59.564945 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:15:59.565162 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:16:09.570368 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:16:09.570405 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:16:19.570479 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:16:19.570635 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:16:29.621806 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:16:29.621864 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:16:39.635583 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:16:39.635847 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:16:49.636835 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:16:49.636882 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:16:59.639301 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:16:59.639410 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:17:09.643055 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:17:09.643197 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:17:19.657977 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:17:19.658021 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:17:29.660403 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:17:29.660462 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:17:39.689298 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:17:39.689345 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:17:49.689370 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:17:49.689457 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:17:59.755413 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:17:59.755507 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:18:09.755559 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:18:09.755827 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:18:19.776357 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:18:19.776526 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:18:29.776264 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:18:29.776375 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:18:39.794687 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:18:39.794692 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:18:49.800859 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:18:49.800859 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:18:59.803565 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:18:59.803649 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:19:09.803525 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:19:09.803567 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:19:19.831073 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:19:19.831137 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:19:29.831182 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:19:29.831211 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:19:39.884093 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:19:39.884144 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:19:49.920353 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:19:49.920443 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:19:59.920817 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:19:59.920884 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:20:09.921072 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:20:09.921175 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:20:19.975124 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:20:19.975227 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:20:29.976168 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:20:29.976253 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:20:39.976147 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:20:39.976249 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:20:45.015983 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:20:49.976143 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:20:49.976287 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:20:59.977704 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:20:59.977798 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:21:09.978850 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:21:09.978890 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:21:19.978903 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:21:19.978940 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:21:29.981275 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:21:29.981372 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:21:39.981265 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:21:39.981396 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:21:49.982087 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:21:49.982186 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:21:59.984019 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:21:59.984111 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:22:09.984025 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:22:09.984096 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:22:19.985495 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:22:19.985571 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:22:30.014330 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:22:30.014435 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:22:40.014406 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:22:40.014520 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:22:50.014594 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:22:50.014711 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:23:00.014582 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:23:00.014666 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:23:10.014984 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:23:10.015054 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:23:20.016761 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:23:20.016863 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:23:30.016783 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:23:30.016960 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:23:40.017518 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:23:40.017570 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:23:50.017735 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:23:50.017819 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:24:00.018205 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:24:00.019062 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:24:10.018402 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:24:10.018471 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:24:20.021209 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:24:20.021315 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:24:30.033683 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:24:30.033843 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:24:40.034140 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:24:40.034236 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:24:50.034189 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:24:50.034276 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:25:00.034234 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:25:00.034310 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:25:10.034188 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:25:10.034222 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:25:20.036141 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:25:20.036181 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:25:30.036147 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:25:30.036224 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:25:40.036124 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:25:40.036197 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:25:46.039394 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:25:50.046631 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:25:50.046701 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:26:00.046686 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:26:00.046780 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:26:10.047002 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:26:10.047060 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:26:20.046982 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:26:20.047057 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:26:30.047306 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:26:30.047448 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:26:40.048951 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:26:40.049018 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:26:50.104816 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:26:50.104908 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:27:00.106941 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:27:00.107036 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:27:10.113414 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:27:10.113483 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:27:20.114146 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:27:20.114229 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:27:30.114435 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:27:30.114554 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:27:40.119004 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:27:40.119054 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:27:50.150101 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:27:50.150272 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:28:00.197055 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:28:00.197323 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:28:10.202443 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:28:10.202507 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:28:20.202401 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:28:20.202491 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:28:30.212849 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:28:30.212909 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:28:40.265648 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:28:40.265717 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:28:50.265967 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:28:50.266199 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:29:00.265830 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:29:00.265863 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:29:10.265935 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:29:10.265974 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:29:20.269459 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:29:20.269537 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:29:30.273427 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:29:30.273505 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:29:40.320117 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:29:40.320253 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:29:50.320129 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:29:50.320207 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:30:00.333624 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:30:00.333677 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:30:10.334310 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:30:10.334357 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:30:20.334029 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:30:20.334284 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:30:30.334021 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:30:30.334138 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:30:40.334162 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:30:40.335215 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:30:47.000522 [ 67 ] {} <Trace> AsynchronousMetrics: Scanning /sys/block
+2026.03.18 19:30:50.334056 [ 36 ] {} <Trace> KeeperTCPHandler: Received heartbeat for session #1
+2026.03.18 19:30:50.334132 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:30:56.329495 [ 36 ] {} <Debug> KeeperTCPHandler: Received close event with xid 2147483647 for session id #1
+2026.03.18 19:30:56.329519 [ 40 ] {} <Trace> KeeperDispatcher: Processing requests batch, size: 1, bytes: 0
+2026.03.18 19:30:56.338672 [ 36 ] {} <Debug> KeeperTCPHandler: Session #1 successfully closed
+2026.03.18 19:30:57.184376 [ 35 ] {} <Trace> BaseDaemon: Received signal 15
+2026.03.18 19:30:57.184416 [ 35 ] {} <Information> Application: Received termination signal (Terminated)
+2026.03.18 19:30:57.184428 [ 1 ] {} <Information> Application: Shutting down.
+2026.03.18 19:30:57.185041 [ 1 ] {} <Debug> Application: Waiting for current connections to Keeper to finish.
+2026.03.18 19:30:57.288099 [ 1 ] {} <Information> Application: Closed all listening sockets.
+2026.03.18 19:30:57.288120 [ 1 ] {} <Information> Application: Closed connections to Keeper.
+2026.03.18 19:30:57.288126 [ 1 ] {} <Debug> KeeperDispatcher: Shutting down storage dispatcher
+2026.03.18 19:30:58.262368 [ 57 ] {} <Error> RaftInstance: session 1 failed to read rpc header from socket ::ffff:172.18.0.4:46192 due to error 2, End of file, ref count 1
+2026.03.18 19:30:58.263230 [ 1 ] {} <Information> RaftInstance: shutting down raft core
+2026.03.18 19:30:58.263649 [ 1 ] {} <Information> RaftInstance: sent stop signal to the commit thread.
+2026.03.18 19:30:58.263711 [ 1 ] {} <Information> RaftInstance: cancelled all schedulers.
+2026.03.18 19:30:58.263716 [ 1 ] {} <Information> RaftInstance: commit thread stopped.
+2026.03.18 19:30:58.263720 [ 1 ] {} <Information> RaftInstance: all pending commit elements dropped.
+2026.03.18 19:30:58.263975 [ 1 ] {} <Information> RaftInstance: reset all pointers.
+2026.03.18 19:30:58.264359 [ 1 ] {} <Information> RaftInstance: joined terminated commit thread.
+2026.03.18 19:30:58.264574 [ 63 ] {} <Information> RaftInstance: bg append_entries thread terminated
+2026.03.18 19:30:58.264970 [ 1 ] {} <Information> RaftInstance: sent stop signal to background append thread.
+2026.03.18 19:30:58.264982 [ 1 ] {} <Information> RaftInstance: clean up auto-forwarding queue: 0 elems
+2026.03.18 19:30:58.264985 [ 1 ] {} <Information> RaftInstance: clean up auto-forwarding clients
+2026.03.18 19:30:58.264989 [ 1 ] {} <Information> RaftInstance: srv 3, in-use 0, idle 1
+2026.03.18 19:30:58.265185 [ 1 ] {} <Information> RaftInstance: raft_server shutdown completed.
+2026.03.18 19:30:58.265193 [ 1 ] {} <Information> RaftInstance: manually create a snapshot on 2236
+2026.03.18 19:30:58.265196 [ 1 ] {} <Information> RaftInstance: creating a snapshot for index 2236
+2026.03.18 19:30:58.265200 [ 1 ] {} <Information> RaftInstance: create snapshot idx 2236 log_term 2
+2026.03.18 19:30:58.265205 [ 1 ] {} <Debug> KeeperStateMachine: Creating snapshot 2236
+2026.03.18 19:30:58.265212 [ 1 ] {} <Information> KeeperStateMachine: Creating a snapshot during shutdown because 'create_snapshot_on_exit' is enabled.
+2026.03.18 19:30:58.273408 [ 1 ] {} <Debug> KeeperStateMachine: Created persistent snapshot 2236 with path snapshot_2236.bin.zstd
+2026.03.18 19:30:58.273420 [ 1 ] {} <Trace> KeeperStateMachine: Clearing garbage after snapshot
+2026.03.18 19:30:58.273423 [ 1 ] {} <Trace> KeeperStateMachine: Cleared garbage after snapshot
+2026.03.18 19:30:58.273433 [ 1 ] {} <Information> RaftInstance: snapshot idx 2236 log_term 2 created, compact the log store if needed
+2026.03.18 19:30:58.273438 [ 1 ] {} <Information> KeeperStateMachine: Uploading snapshot snapshot_2236.bin.zstd during shutdown because 'upload_snapshot_on_exit' is enabled.
+2026.03.18 19:30:58.273444 [ 1 ] {} <Information> RaftInstance: create snapshot idx 2236 log_term 2 done: 8240 us elapsed
+2026.03.18 19:30:58.274428 [ 46 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 15
+2026.03.18 19:30:58.274479 [ 57 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 13
+2026.03.18 19:30:58.274539 [ 50 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 12
+2026.03.18 19:30:58.274432 [ 55 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 14
+2026.03.18 19:30:58.274596 [ 48 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 11
+2026.03.18 19:30:58.274903 [ 56 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 10
+2026.03.18 19:30:58.275219 [ 60 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 9
+2026.03.18 19:30:58.275294 [ 58 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 8
+2026.03.18 19:30:58.275339 [ 52 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 7
+2026.03.18 19:30:58.275546 [ 61 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 6
+2026.03.18 19:30:58.275598 [ 54 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 5
+2026.03.18 19:30:58.275638 [ 49 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 4
+2026.03.18 19:30:58.275859 [ 59 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 3
+2026.03.18 19:30:58.275876 [ 53 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 2
+2026.03.18 19:30:58.276007 [ 47 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 1
+2026.03.18 19:30:58.276139 [ 51 ] {} <Information> RaftInstance: end of asio worker thread, remaining threads: 0
+2026.03.18 19:30:58.279438 [ 1 ] {} <Debug> KeeperSnapshotManagerS3: Shutting down KeeperSnapshotManagerS3
+2026.03.18 19:30:58.279466 [ 1 ] {} <Information> KeeperSnapshotManagerS3: KeeperSnapshotManagerS3 shut down
+2026.03.18 19:30:58.279476 [ 1 ] {} <Debug> KeeperDispatcher: Dispatcher shut down
+2026.03.18 19:30:58.279482 [ 1 ] {} <Debug> Application: Destroyed global context.
+2026.03.18 19:30:58.279547 [ 1 ] {} <Trace> Context: Shutting down named sessions
+2026.03.18 19:30:58.279555 [ 1 ] {} <Trace> Context: Shutting down database catalog
+2026.03.18 19:30:58.279559 [ 1 ] {} <Trace> DatabaseCatalog: Shutting down system databases
+2026.03.18 19:30:58.279600 [ 1 ] {} <Trace> Context: Shutting down DDLWorker
+2026.03.18 19:30:58.279605 [ 1 ] {} <Trace> Context: Shutting down caches
+2026.03.18 19:30:58.279622 [ 1 ] {} <Trace> Context: Shutting down AccessControl
+2026.03.18 19:30:58.290574 [ 1 ] {} <Warning> KeeperLogStore: Changelog is shut down
+2026.03.18 19:30:58.298091 [ 1 ] {} <Information> Application: shutting down
+2026.03.18 19:30:58.298110 [ 1 ] {} <Debug> Application: Uninitializing subsystem: Logging Subsystem
+2026.03.18 19:30:58.298136 [ 35 ] {} <Trace> BaseDaemon: Received signal -2
+2026.03.18 19:30:58.298141 [ 35 ] {} <Information> BaseDaemon: Stop SignalListener thread

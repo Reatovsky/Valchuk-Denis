@@ -1,0 +1,9 @@
+columns format version: 1
+7 columns:
+`course_code` String
+`course_name` String
+`credits` UInt8
+`department_id` String
+`semester` UInt8
+`is_elective` UInt8
+`created_at` DateTime

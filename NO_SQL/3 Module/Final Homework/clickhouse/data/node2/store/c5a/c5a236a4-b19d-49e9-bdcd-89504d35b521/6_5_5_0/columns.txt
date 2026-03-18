@@ -1,0 +1,13 @@
+columns format version: 1
+11 columns:
+`schedule_id` String
+`group_code` String
+`course_code` String
+`teacher_id` String
+`day_of_week` UInt8
+`pair_number` UInt8
+`week_type` String
+`classroom` String
+`semester` UInt8
+`academic_year` String
+`created_at` DateTime

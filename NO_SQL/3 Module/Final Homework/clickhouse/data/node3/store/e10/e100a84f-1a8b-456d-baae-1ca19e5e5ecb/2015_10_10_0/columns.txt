@@ -1,0 +1,11 @@
+columns format version: 1
+9 columns:
+`teacher_id` String
+`full_name` String
+`email` String
+`position` String
+`degree` String
+`hire_date` Date
+`max_hours` UInt16
+`current_hours` UInt16
+`created_at` DateTime

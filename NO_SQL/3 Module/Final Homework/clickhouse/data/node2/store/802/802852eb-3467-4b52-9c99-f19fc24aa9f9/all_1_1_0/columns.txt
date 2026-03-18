@@ -1,0 +1,10 @@
+columns format version: 1
+8 columns:
+`department_id` String
+`name` String
+`type` String
+`dean_name` String
+`contact_email` String
+`phone` String
+`building` String
+`created_at` DateTime

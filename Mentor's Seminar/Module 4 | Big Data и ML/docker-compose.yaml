@@ -1,0 +1,132 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_DB: superset
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-dbs.sql:/docker-entrypoint-initdb.d/init-dbs.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - data_platform
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d superset"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: admin12345
+    volumes:
+      - minio_data:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    networks:
+      - data_platform
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+
+  minio-create-bucket:
+    image: minio/mc:latest
+    container_name: minio-client
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      sleep 5;
+      mc alias set myminio http://minio:9000 admin admin12345;
+      mc mb myminio/superset-bucket --ignore-existing;
+      mc policy set download myminio/superset-bucket;
+      echo 'Bucket created successfully';
+      exit 0;
+      "
+    networks:
+      - data_platform
+
+  superset:
+    image: apache/superset:latest
+    container_name: superset
+    environment:
+      SUPERSET_SECRET_KEY: 'tjigrebiogkjrengbooire'
+      SUPERSET_SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://admin:admin@postgres:5432/superset
+      SUPERSET_LOAD_EXAMPLES: 'yes'
+      MINIO_ENDPOINT: minio:9000
+      MINIO_ACCESS_KEY: admin
+      MINIO_SECRET_KEY: admin12345
+    ports:
+      - "8088:8088"
+    volumes:
+      - superset_data:/app/superset_home
+      - ./superset_config.py:/app/pythonpath/superset_config.py
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    networks:
+      - data_platform
+    restart: unless-stopped
+    user: root
+    command: >
+      sh -c "
+        pip install --no-cache-dir psycopg2-binary &&
+        cp -r /usr/local/lib/python3.10/site-packages/psycopg2* /app/.venv/lib/python3.10/site-packages/ &&
+        superset fab create-admin --username admin --firstname admin --lastname admin --email admin@admin.com --password admin &&
+        superset db upgrade &&
+        superset init &&
+        superset run -h 0.0.0.0 -p 8088 --with-threads --reload --debugger
+      "
+
+  jupyterhub:
+    image: jupyterhub/jupyterhub:latest
+    container_name: jupyterhub
+    volumes:
+      - jupyterhub_data:/srv/jupyterhub
+      - ./jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8000:8000"
+    environment:
+      DOCKER_JUPYTER_IMAGE: jupyter/scipy-notebook:latest
+      DOCKER_NETWORK_NAME: data_platform
+    networks:
+      - data_platform
+    restart: unless-stopped
+    user: root
+    command: >
+        sh -c "
+            pip install --no-cache-dir psycopg2-binary sqlalchemy pandas minio ipython-sql jupyterlab dockerspawner &&
+            useradd -m -s /bin/bash admin 2>/dev/null || true &&
+            echo 'admin:admin' | chpasswd &&
+            jupyterhub --Spawner.default_url='/lab' \
+                --Authenticator.allow_all=True \
+                --JupyterHub.spawner_class='dockerspawner.DockerSpawner' \
+                --DockerSpawner.image='jupyter/scipy-notebook:latest' \
+                --DockerSpawner.network_name='data_platform'
+        "
+
+networks:
+  data_platform:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  minio_data:
+  superset_data:
+  jupyterhub_data:

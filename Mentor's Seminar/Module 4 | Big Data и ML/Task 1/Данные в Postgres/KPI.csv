@@ -1,0 +1,6 @@
+"well_id","well_name","field_name","region","avg_daily_oil","total_oil","avg_downtime_pct","avg_temp","avg_pressure","avg_efficiency"
+1,"Well-101","Severo-Ural","Khanty-Mansi",213.0,5538.0,2.05,88.23,120.48,9.06
+2,"Well-102","Severo-Ural","Khanty-Mansi",185.82,5574.5,3.03,84.49,115.31,7.98
+3,"Well-203","Vostok-Field","Yamalo-Nenets",121.66,3284.9,8.12,79.44,107.15,5.52
+4,"Well-304","Zapad-Field","Tomsk",0.0,0.0,100.0,85.7,117.35,0.0
+5,"Well-305","Zapad-Field","Tomsk",198.43,5952.9,1.82,86.8,119.43,8.42

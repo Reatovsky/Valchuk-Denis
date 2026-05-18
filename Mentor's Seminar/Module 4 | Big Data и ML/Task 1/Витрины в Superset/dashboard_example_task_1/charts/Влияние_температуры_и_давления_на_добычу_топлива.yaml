@@ -1,0 +1,109 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+cache_timeout: null
+certification_details: null
+certified_by: null
+dataset_uuid: a72d8f66-3daa-4d20-935a-5b9b82f66d63
+description: null
+params:
+  adhoc_filters: []
+  border_color:
+    a: 1
+    b: 0
+    g: 0
+    r: 0
+  border_width: 0
+  bottom_margin: auto
+  dashboards:
+  - 1
+  datasource: 4__table
+  extra_form_data: {}
+  groupby: temperature_range
+  left_margin: auto
+  legend_type: continuous
+  linear_color_scheme: superset_seq_1
+  matrixify_all_sort_by_columns: a_to_z
+  matrixify_all_sort_by_rows: a_to_z
+  matrixify_cell_title_template: ''
+  matrixify_charts_per_row: 4
+  matrixify_dimension_columns:
+    dimension: ''
+    values: []
+  matrixify_dimension_rows:
+    dimension: ''
+    values: []
+  matrixify_dimension_selection_mode_columns: members
+  matrixify_dimension_selection_mode_rows: members
+  matrixify_enable: false
+  matrixify_fit_columns_dynamically: true
+  matrixify_mode_columns: disabled
+  matrixify_mode_rows: disabled
+  matrixify_row_height: 300
+  matrixify_show_column_headers: true
+  matrixify_show_row_labels: true
+  matrixify_topn_order_columns: true
+  matrixify_topn_order_rows: true
+  matrixify_topn_value_columns: 10
+  matrixify_topn_value_rows: 10
+  metric:
+    aggregate: AVG
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: avg_oil_ton
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 24
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: DOUBLE PRECISION
+      type_generic: 0
+      uuid: e3244bb0-859f-45a4-a380-4e503ae9710c
+      verbose_name: null
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: false
+    label: AVG(avg_oil_ton)
+    optionName: metric_4xmvnouewjh_fkopsc2xbsk
+    sqlExpression: null
+  normalize_across: heatmap
+  normalized: false
+  row_limit: 10000
+  show_legend: true
+  show_percentage: true
+  show_values: false
+  time_grain_sqla: P1D
+  value_bounds:
+  - null
+  - null
+  viz_type: heatmap_v2
+  xAxisLabelRotation: 0
+  x_axis: pressure_range
+  x_axis_time_format: smart_date
+  xscale_interval: -1
+  y_axis_format: SMART_NUMBER
+  yscale_interval: -1
+query_context: null
+slice_name: Влияние температуры и давления на добычу топлива
+uuid: d7acf559-4d19-4dc1-895e-5f90277d3dd5
+version: 1.0.0
+viz_type: heatmap_v2

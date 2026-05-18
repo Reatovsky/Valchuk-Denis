@@ -1,0 +1,95 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+certification_details: ''
+certified_by: ''
+css: ''
+dashboard_title: Task 1
+description: null
+metadata:
+  chart_configuration:
+    042b4d63-4009-487f-aba6-e167b08de585:
+      crossFilters:
+        chartsInScope: []
+        scope: global
+      id: 042b4d63-4009-487f-aba6-e167b08de585
+  color_scheme: ''
+  color_scheme_domain: []
+  cross_filters_enabled: true
+  default_filters: '{}'
+  expanded_slices: {}
+  global_chart_configuration:
+    chartsInScope:
+    - 042b4d63-4009-487f-aba6-e167b08de585
+    scope:
+      excluded: []
+      rootPath:
+      - ROOT_ID
+  label_colors: {}
+  map_label_colors:
+    SUM(total_oil): '#1FA8C9'
+  native_filter_configuration: []
+  refresh_frequency: 0
+  shared_label_colors:
+  - SUM(total_oil)
+  timed_refresh_immune_slices: []
+position:
+  CHART-explore-1-1:
+    children: []
+    id: CHART-explore-1-1
+    meta:
+      chartId: 1
+      height: 50
+      sliceName: Добыча по дням
+      uuid: 042b4d63-4009-487f-aba6-e167b08de585
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-fF6y8rRW70x0xDWxtOpz0
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-fF6y8rRW70x0xDWxtOpz0
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: Task 1
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-fF6y8rRW70x0xDWxtOpz0:
+    children:
+    - CHART-explore-1-1
+    id: ROW-fF6y8rRW70x0xDWxtOpz0
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+published: false
+slug: null
+uuid: fb2744d4-7ebd-4dc5-8b64-c207f1159d3c
+version: 1.0.0

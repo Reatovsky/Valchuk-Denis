@@ -1,0 +1,6 @@
+prod_id,well_id,date,oil_ton,gas_m3,water_m3,energy_kwh,downtime_hours,temperature,pressure,well_name,field_name,region,year,month,day
+25,1,2025-10-25,213.4,55240.0,182.4,7465.0,0.5,88.1,120.7,Well-101,Severo-Ural,Khanty-Mansi,2025,10,25
+55,2,2025-10-25,185.6,49780.0,161.6,6790.0,0.7,84.5,115.3,Well-102,Severo-Ural,Khanty-Mansi,2025,10,25
+85,3,2025-10-25,121.5,40140.0,121.2,5280.0,2.0,79.4,107.1,Well-203,Vostok-Field,Yamalo-Nenets,2025,10,25
+115,4,2025-10-25,0.0,0.0,0.0,0.0,24.0,,,Well-304,Zapad-Field,Tomsk,2025,10,25
+145,5,2025-10-25,199.3,52390.0,165.5,7260.0,0.3,87.0,119.8,Well-305,Zapad-Field,Tomsk,2025,10,25

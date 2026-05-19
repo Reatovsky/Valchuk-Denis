@@ -111,7 +111,7 @@ services:
     user: root
     command: >
         sh -c "
-            pip install --no-cache-dir psycopg2-binary sqlalchemy pandas minio ipython-sql jupyterlab dockerspawner &&
+            pip install --no-cache-dir psycopg2-binary sqlalchemy numpy matplotlib joblib scikit-learn pandas seaborn minio ipython-sql jupyterlab dockerspawner &&
             useradd -m -s /bin/bash admin 2>/dev/null || true &&
             echo 'admin:admin' | chpasswd &&
             jupyterhub --Spawner.default_url='/lab' \

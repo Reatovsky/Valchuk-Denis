@@ -1,0 +1,4 @@
+delivery_id,date,source,destination,product_type,volume_ton,cost_usd,delay_hours,distance_km,weather_conditions,driver_id,vehicle_id,driver_name,experience_years,driver_region,capacity_ton,fuel_type,cost_per_km,cost_per_ton,cost_per_ton_km,delay_per_km,efficiency_score,route,source_city,destination_city,day_of_week,is_weekend,weather_code
+1,2025-10-01,Base-Khanty,Station-01,Diesel,32.5,2100.5,0.0,180.0,Clear,1,1,Ivan Petrov,8,Khanty-Mansi,40.0,diesel,11.67,64.63,0.3591,0.0,1.55,Base-Khanty → Station-01,Khanty,01,2,0,0
+2,2025-10-01,Base-Tomsk,Station-02,Gasoline,28.0,1850.0,1.5,150.0,Rain,2,2,Sergey Sidorov,12,Tomsk,35.0,diesel,12.33,66.07,0.4405,1.0,1.51,Base-Tomsk → Station-02,Tomsk,02,2,0,2
+3,2025-10-01,Base-Tyumen,Station-03,Diesel,22.0,1650.25,0.0,120.0,Clear,3,3,Aleksey Smirnov,5,Tyumen,25.0,gas,13.75,75.01,0.6251,0.0,1.33,Base-Tyumen → Station-03,Tyumen,03,2,0,0

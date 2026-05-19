@@ -1,0 +1,1 @@
+{"features": ["pump_speed_rpm", "pump_current", "pressure_in", "pressure_out", "temperature", "vibration", "operating_hours", "pressure_diff", "power_kw", "lag_daily_oil_1d", "lag_daily_oil_3d", "ma3_daily_oil", "day_of_week", "is_weekend", "month"], "target": "daily_oil_ton"}
